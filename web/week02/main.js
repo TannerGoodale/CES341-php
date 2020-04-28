@@ -15,7 +15,9 @@ function changeColor(){
 
 // Jquerry solution
 
-function changeColor(){
-    var color = $('#color').val;
-    $("colordiv").css("color", color);
-}
+$(document).ready(function(){
+    $("#colorbutton").click(function(){
+        var color = $('#color').val;
+        $("#colordiv").css("color", color);
+    });
+  });
