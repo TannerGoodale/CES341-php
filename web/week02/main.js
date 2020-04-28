@@ -3,3 +3,8 @@
 function alertClick(){
     alert("Clicked!");
 }
+
+function changeColor(){
+    let newColor = document.getElementById("color").value;
+    document.getElementById("colordiv").style.color = newColor;
+}
