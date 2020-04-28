@@ -13,11 +13,11 @@ function changeColor(){
 
 */
 
-// Jquerry solution
+// Jquery solution
 
-$(document).ready(function(){
-    $("#colorbutton").click(function(){
-        var color = $('#color').val;
-        $("#colordiv").css("color", color);
-    });
-  });
+$(function(){
+var $color = $('#color').val();
+$('#colorbutton').click(function(){
+    $('#colordiv').css('color', $color);
+})
+})
