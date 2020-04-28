@@ -13,7 +13,7 @@
 <body>
     <div id="container">
         <header>
-            <?php include $_SERVER['DOCUMENT_ROOT'].'/web/modules/header.php';?>
+            <?php include $_SERVER['DOCUMENT_ROOT'].'/modules/header.php';?>
         </header>
         <main>
             <section>
@@ -35,7 +35,7 @@
             </section>
         </main>
         <footer>
-        <?php include $_SERVER['DOCUMENT_ROOT'].'/web/modules/footer.php';?>
+            <?php include $_SERVER['DOCUMENT_ROOT'].'/modules/footer.php';?>
         </footer>
     </div>
 </body>
