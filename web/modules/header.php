@@ -1,6 +1,6 @@
 <div id="headerTop">
-    <a href="../index.php"><img src="../assests/icon.png" alt="Logo icon"></a>
-    <p class="small-i">CES 341</p>
+    <a href="../index.php"><img src="../assests/icon.png" alt="Logo icon" class="br-100"></a>
+    <p class="i">CES 341</p>
 </div>
 <nav>
     <a href="../index.php">Project Portal</a>
