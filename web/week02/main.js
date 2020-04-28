@@ -16,8 +16,7 @@ function changeColor(){
 // Jquery solution
 
 $(function(){
-var $color = $('#color').val();
 $('#colorbutton').click(function(){
-    $('#colordiv').css('color', $color);
+    $('#colordiv').css('color', $('#color').val());
 })
 })
