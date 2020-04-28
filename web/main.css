@@ -1,0 +1,10 @@
+/*Main css file for the heroku project*/
+
+/*header modifiers*/
+#headerTop{
+    text-align: center;
+}
+
+nav a{
+    margin: 0 1em 0 1em;
+}
