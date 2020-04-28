@@ -4,3 +4,7 @@
     background-color: darkslateblue;
     color: #ffffff;
 }
+
+.initDivs:hover {
+    font-weight: bold;
+}
