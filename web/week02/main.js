@@ -19,4 +19,8 @@ $(function(){
 $('#colorbutton').click(function(){
     $('#colordiv').css('color', $('#color').val());
 })
+$('#fadebutton').click(function(){
+    $("#question").fadeToggle("slow");
 })
+})
+
