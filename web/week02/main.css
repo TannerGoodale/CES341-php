@@ -8,3 +8,7 @@
 .initDivs:hover {
     font-weight: bold;
 }
+
+.container {
+    text-align: center;
+}
