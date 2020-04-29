@@ -12,7 +12,7 @@
     <script src="main.js"></script>
 </head>
 <body>
-    <div id="container">
+    <div id="container" class="measure-wide">
         <header>
             <?php include $_SERVER['DOCUMENT_ROOT'].'/modules/header.php';?>
         </header>

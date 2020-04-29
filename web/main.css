@@ -6,5 +6,18 @@
 }
 
 nav a{
+    text-align: center;
     margin: 0 1em 0 1em;
+}
+
+/*body and container modifers*/
+#container{
+    margin: auto;
+}
+
+/*footer modifiers*/
+footer{
+    text-align: center;
+    background-color: black;
+    color: #ffffff;
 }
