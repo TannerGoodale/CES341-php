@@ -4,7 +4,9 @@
 #headerTop{
     text-align: center;
     margin-top: 3em;
-    border-radius: 100%;
+}
+
+#headerTop img{
     transition-duration: 1s;
     transition-property: all;
 }
@@ -12,7 +14,7 @@
 #headerTop img:hover{
     transition-duration: 1s;
     transition-property: all;
-    border-radius: 10%;
+    border-radius: 20%;
 }
 
 nav{
