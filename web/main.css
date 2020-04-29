@@ -6,6 +6,12 @@
     margin-top: 3em;
 }
 
+#headerTop img:hover{
+    transition-duration: 3s;
+    transition-property: all;
+    border-radius: 10%;
+}
+
 nav{
     margin: auto;
     text-align: center;
