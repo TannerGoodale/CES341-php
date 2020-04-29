@@ -4,13 +4,11 @@
 #headerTop{
     text-align: center;
     margin-top: 3em;
-    transition-duration: 3s;
+    transition-duration: 1s;
     transition-property: all;
 }
 
 #headerTop img:hover{
-    transition-duration: 3s;
-    transition-property: all;
     border-radius: 10%;
 }
 
