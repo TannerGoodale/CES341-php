@@ -28,7 +28,7 @@
                     <div class="form-group row">
                         <label for="name" class="col-sm-2 col-form-label">Name</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="name" name="username" aria-describedby="nameHelp">
+                            <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp">
                             <small id="namelHelp" class="form-text text-muted">e.g. Jhon Smith</small>
                         </div>
                     </div>
