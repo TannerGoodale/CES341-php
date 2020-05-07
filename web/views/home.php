@@ -21,7 +21,9 @@
                 <h1>Welcome to The Project Portal</h1>
                 <p>Please select the project you wish to see below.</p>
                 <div id="projectList">
-                    <p>Projects coming soon...</p>
+                    <ul>
+                        <li><a href="../misc/week03/teamactivity03-controller.php">Team Activity Week 03</a></li>
+                    </ul>
                 </div>
             </section>
         </main>
