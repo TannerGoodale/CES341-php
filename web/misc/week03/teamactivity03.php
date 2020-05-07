@@ -48,7 +48,11 @@
                     
                     <div class="form-group row">
                         <label for="name" class="col-sm-2 col-form-label">Major</label>
-                        <?php echo $majorbuttons; ?>
+                        <?php
+                        foreach ($majors as $key=>$major) {
+                            print '<input type="radio" name="major" value="' . $key . '"> ' . $major . '<br>';
+                        }
+                        ?>
                     </div>
 
                 <!-- Choose your major radio buttons ENDS --> 
@@ -113,6 +117,7 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-sm-10">
+                    <input type="hidden" name="action" value="submit">
                     <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </div>

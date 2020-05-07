@@ -83,12 +83,6 @@ switch ($action) {
     "ce"=>"Computer Engineering"
     );
 
-    foreach ($majors as $key=>$major) {
-        $majorbuttons = '<div>';
-        $majorbuttons .= '<input type="radio" name="major" value="' . $key . '"> ' . $major . '<br>';
-        $majorbuttons .= '</div>';
-    }
-
     include 'teamactivity03.php';
 }
 
