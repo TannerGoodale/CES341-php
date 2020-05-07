@@ -59,12 +59,6 @@ switch ($action) {
         }
     }
 
-    foreach ($visits as $visit) {
-        $placesCoded = '<div>';
-        $placesCoded .= "<li>" . $visit . "</li>";
-        $placesCoded .= '</div>';
-    }
-
     include 'teamactivity03-display.php';
   break;
 

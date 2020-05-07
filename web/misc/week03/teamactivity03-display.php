@@ -19,7 +19,11 @@
             <p class="h4 text-center">Welcome <span class="h4 text-muted"> <?php echo $name; ?> </span></p>
             <p class="h4 text-center">Your email address is <span class="h4 text-muted"><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></span></a></p>
             <p class="h4 text-center">Your major is: <span class="h4 text-muted"> <?php echo $major; ?></span></p>
-            <p class="h4 text-center">You have been in the following places: <span class="h4 text-muted"> <?php if(isset($placesCoded)){echo $placesCoded;}?></span></p>
+            <p class="h4 text-center">You have been in the following places: <span class="h4 text-muted"> <?php
+                foreach ($visits as $visit) {
+                    echo "<li>" . $visit . "</li>";
+                }
+                ?></span></p>
             <blockquote class="blockquote text-center">
                 <p class="mb-0 display-4">"<?php echo $comments;  ?>"</p>
                 <footer class="blockquote-footer"><?php echo $name; ?></footer>
