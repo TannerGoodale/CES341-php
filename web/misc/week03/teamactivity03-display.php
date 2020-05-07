@@ -36,11 +36,15 @@
                     echo "N/A";
             }
             ?></span></p>
-            <p class="h4 text-center">You have been in the following places: <span class="h4 text-muted"> <?php
+            <p class="h4 text-center">You have been in the following places: <span class="h4 text-muted">
+                <ul>
+                <?php
                 foreach ($visits as $visit) {
                     echo "<li>" . $visit . "</li>";
                 }
-                ?></span></p>
+                ?>
+                </ul>
+                </span></p>
             <blockquote class="blockquote text-center">
                 <p class="mb-0 display-4">"<?php echo $comments;  ?>"</p>
                 <footer class="blockquote-footer"><?php echo $name; ?></footer>
