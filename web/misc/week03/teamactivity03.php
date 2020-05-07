@@ -71,49 +71,15 @@
                 <div class="form-group row">
                     <label for="comments" class="col-sm-2 col-form-label">Continents you have visited</label>
                     <div class="col-sm-10">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="place[]" value="North America" id="North America">
-                            <label class="form-check-label" for="North America">
-                            North America
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="place[]" value="South America" id="South America">
-                            <label class="form-check-label" for="South America">
-                            South America
-                            </label>
+                    <input type="checkbox" name="visit0" value="na"> North America
+                    <input type="checkbox" name="visit1" value="sa"> South America
+                    <input type="checkbox" name="visit2" value="eu"> Europe
+                    <input type="checkbox" name="visit3" value="as"> Asia
+                    <input type="checkbox" name="visit4" value="au"> Australia
+                    <input type="checkbox" name="visit5" value="af"> Africa
+                    <input type="checkbox" name="visit6" value="an"> Antarctica
+                    <small id="placeslHelp" class="form-text text-muted">Check all the places you have been</small>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="place[]" value="Europe" id="Europe">
-                        <label class="form-check-label" for="Europe">
-                        Europe
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="place[]" value="Asia" id="Asia">
-                        <label class="form-check-label" for="Asia">
-                        Asia
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="place[]" value="Australia" id="Australia">
-                        <label class="form-check-label" for="Australia">
-                        Australia
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="place[]" value="Africa" id="Africa">
-                        <label class="form-check-label" for="Africa">
-                        Africa
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="place[]" value="Antartica" id="Antartica">
-                        <label class="form-check-label" for="Antartica">
-                        Antartica
-                        </label>
-                    </div>
-                    <small id="placeslHelp" class="form-text text-muted">Check all the places you have been        </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-sm-10">

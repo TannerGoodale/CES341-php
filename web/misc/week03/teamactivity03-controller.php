@@ -28,16 +28,10 @@ switch ($action) {
     //Output places message;
     $placesMessage = "";
 
-    //Check if the place option is empty or not
-    if(empty($places = filter_input(INPUT_POST, 'place', FILTER_SANITIZE_STRING))) {
-        // if it is empty provide a message
-        $placesMessage = "You haven't been on earth recently.";
-    }    
-
     $visits = array();
     for ($i = 0; $i < 7; $i++) {
-        if (isset($_POST["place" . $i])) {
-            switch ($_POST["place" . $i]) {
+        if (isset($_POST["visit" . $i])) {
+            switch ($_POST["visit" . $i]) {
                 case ("na"):
                     array_push($visits, "North America");
                     break;
