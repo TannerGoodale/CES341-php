@@ -18,7 +18,24 @@
         <div class="container-md">
             <p class="h4 text-center">Welcome <span class="h4 text-muted"> <?php echo $name; ?> </span></p>
             <p class="h4 text-center">Your email address is <span class="h4 text-muted"><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></span></a></p>
-            <p class="h4 text-center">Your major is: <span class="h4 text-muted"> <?php echo $major; ?></span></p>
+            <p class="h4 text-center">Your major is: <span class="h4 text-muted"> <?php
+            switch ($major) {
+                case "cs":
+                    echo "Computer Science";
+                    break;
+                case "wdd":
+                    echo "Web Design and Development";
+                    break;
+                case "cit":
+                    echo "Computer information Technology";
+                    break;
+                case "ce":
+                    echo "Computer Engineering";
+                    break;
+                default:
+                    echo "N/A";
+            }
+            ?></span></p>
             <p class="h4 text-center">You have been in the following places: <span class="h4 text-muted"> <?php
                 foreach ($visits as $visit) {
                     echo "<li>" . $visit . "</li>";
