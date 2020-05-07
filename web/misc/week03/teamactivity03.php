@@ -20,6 +20,8 @@
             <h1 class="display-4 text-center">Form Handling Demo</h1>
                 <h6 class="invisible">1</h6>
 
+                <?php if(isset($errMessage)){echo $errMessage;} ?>
+
                 <!-- Form STARTS -->
 
                 <form class="container-fluid" action="teamactivity03-controller.php" method="post">

@@ -61,6 +61,12 @@ switch ($action) {
 
     if(empty($name) || empty($email || empty($major) || empty($comments) || empty($visits))){
         $errMessage = '<p>Please enter data for all form fields</p>';
+        $majors = array(
+            "cs"=>"Computer Science",
+            "wdd"=>"Web Design and Development",
+            "cit"=>"Computer information Technology",
+            "ce"=>"Computer Engineering"
+            );
         include 'teamactivity03.php';
         exit;
     }
