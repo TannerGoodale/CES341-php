@@ -59,6 +59,12 @@ switch ($action) {
         }
     }
 
+    if(empty($name) || empty($email || empty($major) || empty($comments) || empty($visits))){
+        $errMessage = '<p>Please enter data for all form fields</p>';
+        include 'teamactivity03.php';
+        exit;
+    }
+
     include 'teamactivity03-display.php';
   break;
 
