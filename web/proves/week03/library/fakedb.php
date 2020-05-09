@@ -30,9 +30,9 @@ function buildProductTNDisplay($products){
 }
 
 
-function getProductInfoById($products, $id){
+/* function getProductInfoById($products, $id){
     for($i = 0; $i < 4; $i++){
-        if($products[$i]['id']==$id){
+        if($products[$i]["id"]==$id){
             // Define data
             $prodId = $products[$i]['id'];
             $prodName = $products[$i]['name'];
@@ -59,5 +59,5 @@ function getProductInfoById($products, $id){
             return $prodInfo;
         }
     }
-}
+} */
 ?>
