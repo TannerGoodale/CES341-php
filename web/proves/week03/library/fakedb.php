@@ -1,20 +1,3 @@
-<!-- Mock up of info dump -->
-<!-- array(1) { [0]=> array(13) { 
-["invId"]=> string(1) "7" 
-["invName"]=> string(14) "Koenigsegg CCX" 
-["invDescription"]=> string(138) "This high performance car is sure to get you where you are going fast. It holds the production car land speed record at an amazing 250mph." 
-["invImage"]=> string(34) "/acme/images/products/no-image.png" 
-["invThumbnail"]=> string(34) "/acme/images/products/no-image.png" 
-["invPrice"]=> string(9) "500000.00" 
-["invStock"]=> string(1) "1" 
-["invSize"]=> string(5) "25000" 
-["invWeight"]=> string(4) "3000" 
-["invLocation"]=> string(8) "San Jose" 
-["categoryId"]=> string(1) "3" 
-["invVendor"]=> string(10) "Koenigsegg" 
-["invStyle"]=> string(5) "Metal" } 
-} -->
-
 <?php
 
 // prod Id, name, discription, price, img location...
