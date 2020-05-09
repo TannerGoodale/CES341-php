@@ -25,6 +25,6 @@ switch ($action) {
 
   $tnDisplay = buildProductTNDisplay($products);
 
-  include 'views/browse.php';
+  include '/views/browse.php';
 }
 ?>
