@@ -24,3 +24,4 @@ function buildProductTNDisplay($products){
     $tnd .= "</div>";
     return $tnd;
 }
+?>
