@@ -18,6 +18,9 @@ switch ($action) {
     
     $id = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_NUMBER_INT);
     $prodInfo = getProductInfoById($products ,$id);
+
+    var_dump($prodInfo);
+    exit;
     
     include '../views/product-page.php';
     
