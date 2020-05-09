@@ -22,7 +22,7 @@ function buildProductTNDisplay($products){
         // Build body using defined data
         $tnd .= "<div class='container'>";
         $tnd .= "<img srec='$img'>";
-        $tnd .= "<a href='../products/index.php?action=getProdInfo&invId=$prodId' class='name'>$prodName</a>";
+        $tnd .= "<a href='../week03/products/index.php?action=getProdInfo&invId=$prodId' class='name'>$prodName</a>";
         $tnd .= "</div>";
     }
     $tnd .= "</div>";
