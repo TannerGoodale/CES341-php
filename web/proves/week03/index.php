@@ -14,9 +14,18 @@ if ($action == NULL) {
 }
 switch ($action) {
 
+  case 'getProdInfo':
+    
+    $id = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_NUMBER_INT);
+    $prodInfo = getProductInfoById($products ,$id);
+    
+    include '../views/product-page.php';
+    
+  exit;
+
   default:
 
-  $tnDisplay = buildProductTNDisplay($products);
+    $tnDisplay = buildProductTNDisplay($products);
 
   include 'views/browse.php';
 }
