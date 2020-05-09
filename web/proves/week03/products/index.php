@@ -1,5 +1,5 @@
 <?php
-// Controller for shopping cart activity week 03
+// Controller for product display in shopping cart activity week 03
 // Template shopping cart / no credit card active
 
 require_once '../week03/library/fakedb.php';
@@ -14,9 +14,18 @@ if ($action == NULL) {
 }
 switch ($action) {
 
+  case 'getProdInfo':
+    
+    $id = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_NUMBER_INT);
+    $prodInfo = getProductInfoById($products ,$id);
+
+    
+
+  exit;
+
   default:
 
-  $tnDisplay = buildProductTNDisplay($products);
+    $tnDisplay = buildProductTNDisplay($products);
 
   include 'views/browse.php';
 }
