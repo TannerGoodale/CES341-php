@@ -18,7 +18,8 @@ switch ($action) {
     
     $id = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_NUMBER_INT);
     //$prodInfo = getProductInfoById($products ,$id);
-    $workingArray = $products[$id-1];
+    $backValue = $id - 1;
+    $workingArray = $products[$backValue];
     var_dump($workingArray);
 
     var_dump($prodInfo);
