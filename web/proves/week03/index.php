@@ -23,6 +23,8 @@ switch ($action) {
 
   default:
 
+  echo 'Hello there!';
+
   $tnDisplay = buildProductTNDisplay($products);
 
   include '/views/browse.php';
