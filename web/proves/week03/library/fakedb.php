@@ -39,11 +39,11 @@ function getProductInfoById($products, $id){
         foreach($prod as $invprod){
         if($invprod['id']==$id){
             // Define data
-            $prodId = $prod['id'];
-            $prodName = $prod['name'];
-            $prodDisc = $prod['disc'];
-            $prodPrice = $prod['price'];
-            $img = $prod['img-location'];
+            $prodId = $invprod['id'];
+            $prodName = $invprod['name'];
+            $prodDisc = $invprod['disc'];
+            $prodPrice = $invprod['price'];
+            $img = $invprod['img-location'];
             // Build body
             $prodInfo = "<div id='container'>";
             $prodInfo .= "<h1>$prodName</h1>";
