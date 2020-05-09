@@ -19,7 +19,7 @@ switch ($action) {
     $id = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_NUMBER_INT);
     $prodInfo = getProductInfoById($products ,$id);
 
-    
+    include '../views/product-page.php';
 
   exit;
 
@@ -27,6 +27,8 @@ switch ($action) {
 
     $tnDisplay = buildProductTNDisplay($products);
 
-  include 'views/browse.php';
+    include '../views/browse.php';
+
+  exit;
 }
 ?>
