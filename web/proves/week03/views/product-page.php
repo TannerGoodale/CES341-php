@@ -17,7 +17,7 @@
         </header>
         <main>
             <section>
-                <!--Add content here-->
+            <?php echo $prodInfo; ?>
             </section>
         </main>
         <footer>
