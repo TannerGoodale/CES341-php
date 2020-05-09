@@ -29,14 +29,21 @@ function buildProductTNDisplay($products){
     return $tnd;
 }
 
+/* foreach($age as $x => $x_value) {
+    echo "Key=" . $x . ", Value=" . $x_value;
+    echo "<br>";
+  } */
+
 function getProductInfoById($products, $id){
-        if($products[0]['id']==$id){
+    foreach($products as $prod){
+        foreach($prod as $invprod){
+        if($invprod['id']==$id){
             // Define data
-            $prodId = $products[0]['id'];
-            $prodName = $products[0]['name'];
-            $prodDisc = $products[0]['disc'];
-            $prodPrice = $products[0]['price'];
-            $img = $products[0]['img-location'];
+            $prodId = $prod['id'];
+            $prodName = $prod['name'];
+            $prodDisc = $prod['disc'];
+            $prodPrice = $prod['price'];
+            $img = $prod['img-location'];
             // Build body
             $prodInfo = "<div id='container'>";
             $prodInfo .= "<h1>$prodName</h1>";
@@ -56,6 +63,7 @@ function getProductInfoById($products, $id){
             $prodInfo = "<p>An error has occoured.</p>";
             return $prodInfo;
         }
-    
+    }
+}
 }
 ?>
