@@ -17,7 +17,7 @@
         </header>
         <main>
             <section>
-                <?php echo $tnDisplay; ?>
+                <?php echo $tnDisplay; echo $_SESSION['cartContent']; ?>
             </section>
         </main>
         <footer>

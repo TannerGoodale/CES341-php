@@ -32,8 +32,6 @@ switch ($action) {
 
     $_SESSION['cartContent'] .= $id;
 
-    echo $_SESSION['cartContent'];
-
     $_SESSION['message'] = "<p class='red'>Successfully added to cart</p>";
 
     header("Location: ../week03/index.php?getProdInfo&id=$id");
