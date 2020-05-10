@@ -55,9 +55,23 @@ switch ($action) {
             $cartData = "<p>There is nothing in your cart.  Click <a href='../week03/index.php'>here</a> to browse.";
         }
 
+    $backToBrowse = "<a href=../week03/index.php>< Back to Browse</a>";
+
     include 'views/cart.php';
 
   exit; 
+
+  case 'removeFromCart':
+
+    $id = filter_input(INPUT_POST, 'prodId', FILTER_SANITIZE_NUMBER_INT);
+
+    $key = array_search($id, $_SESSION['cartContent']);
+
+    unset($_SESSION['cartContent'][$key]);
+
+    header("Location: ../week03/index.php?cart");
+
+  exit;  
 
   default:
 

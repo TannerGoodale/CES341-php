@@ -17,6 +17,7 @@
         </header>
         <main>
             <section>
+                <?php echo $backToBrowse; ?>
                 <?php echo $cartData; ?>
             </section>
         </main>
