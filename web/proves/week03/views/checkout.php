@@ -19,7 +19,6 @@
             <section>
                 <?php if(isset($message)){echo $message;} ?>
                 <?php echo $form ?>
-                <?php echo $returnToCart ?>
             </section>
         </main>
         <footer>

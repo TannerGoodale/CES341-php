@@ -89,13 +89,11 @@ switch ($action) {
 
     $form = checkOutForm();
 
-    $returnToCart = '<a href="index.php?action=cart">Cart</a>';
-
     include 'views/checkout.php';
 
   exit;  
 
-  case 'confrim':
+  case 'confirm':
 
     // fname, lname, street, state, zip
 

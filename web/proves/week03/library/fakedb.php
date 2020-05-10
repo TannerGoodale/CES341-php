@@ -86,7 +86,7 @@ function getProductSummeryById($products, $id){
 }
 
 function checkOutForm(){
-    $f = "<form action='index.php' method='POST'>>";
+    $f = "<form action='index.php' method='POST'>";
     $f .= "<label for='fname'>First name:</label>";
     $f .= "<input type='text' id='fname' name='fname'>";
     $f .= "<label for='lname'>Last name:</label>";
