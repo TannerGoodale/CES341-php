@@ -3,9 +3,9 @@
 // prod Id, name, discription, price, img location...
 
 $products = array (
-    array ( "id"=>"1", "name"=>"Spring Apple", "disc"=>"A wonderful spring time herbal tea. Made from all natural dried apple, lemon peels, hibiscus flowers and other fresh friuts.", "price"=>"$4.00", "img-location"=>"../assests/apple.jpg" ),
-    array ( "id"=>"2", "name"=>"Dewy Cherry", "disc"=>"A sweet and tart herbal blend of cherries, apples, orange peels, rose gips and hibiscus flowers.", "price"=>"$4.00", "img-location"=>"../assests/cherry.jpg" ),
-    array ( "id"=>"3", "name"=>"Green Rooibos", "disc"=>"A natural herbal tea that's similar in taste to traditional green tea.", "price"=>"$3.00", "img-location"=>"../assests/green-rooibos.jpg" ),
+    array ( "id"=>"1", "name"=>"Spring Apple", "disc"=>"A wonderful spring time herbal tea. Made from all natural dried apple, lemon peels, hibiscus flowers and other fresh friuts.", "price"=>"$4.00", "img-location"=>"assests/apple.jpg" ),
+    array ( "id"=>"2", "name"=>"Dewy Cherry", "disc"=>"A sweet and tart herbal blend of cherries, apples, orange peels, rose gips and hibiscus flowers.", "price"=>"$4.00", "img-location"=>"assests/cherry.jpg" ),
+    array ( "id"=>"3", "name"=>"Green Rooibos", "disc"=>"A natural herbal tea that's similar in taste to traditional green tea.", "price"=>"$3.00", "img-location"=>"assests/green-rooibos.jpg" ),
 );
 
 // Bulder functions
@@ -29,13 +29,8 @@ function buildProductTNDisplay($products){
     return $tnd;
 }
 
-/* foreach($age as $x => $x_value) {
-    echo "Key=" . $x . ", Value=" . $x_value;
-    echo "<br>";
-  } */
-
-/* function getProductInfoById($products, $id){
-    foreach($products as $prod => $value){
+function getProductInfoById($products, $id){
+    foreach($products as $prod){
         if($prod['id']==$id){
             // Define data
             $prodId = $prod['id'];
@@ -63,5 +58,5 @@ function buildProductTNDisplay($products){
             return $prodInfo;
         }
     }
-} */
+}
 ?>

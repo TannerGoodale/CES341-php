@@ -18,7 +18,7 @@ switch ($action) {
     
      $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
     
-    switch ($id) {
+    /* switch ($id) {
         case '1':
             $prod = array ( "id"=>"1", "name"=>"Spring Apple", "disc"=>"A wonderful spring time herbal tea. Made from all natural dried apple, lemon peels, hibiscus flowers and other fresh friuts.", "price"=>"$4.00", "img-location"=>"assests/apple.jpg" );
             $prodId = $prod['id'];
@@ -40,7 +40,10 @@ switch ($action) {
             $prodInfo .= "<input name='submit' type='submit' value='Add To Cart'>";
             $prodInfo .= "</form>";
             $prodInfo .= "</div>";
-    }
+        exit;
+    } */
+
+    $prodInfo = getProductInfoById($products, $id);
 
     include 'views/product-page.php';
     
