@@ -71,8 +71,8 @@ function getProductSummeryById($products, $id){
             $img = $prod['img-location'];
             // Build body
             $prodInfo = "<div id='container-fluid'>";
-            $prodInfo .= "<img class='tn' src='$img'>";
-            $prodInfo .= "<a href='../week03/index.php?action=getProdInfo&id=$prodId'>$prodName</p>";
+            $prodInfo .= "<a href='../week03/index.php?action=getProdInfo&id=$prodId'><img class='tn' src='$img'></a>";
+            $prodInfo .= "<a href='../week03/index.php?action=getProdInfo&id=$prodId'>$prodName</a>";
             $prodInfo .= "<span>$prodPrice</span>";
             $prodInfo .= "<form action='index.php' method='POST'>";
             $prodInfo .= "<input type='hidden' name='prodId' value='$prodId'>";
