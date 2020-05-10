@@ -46,7 +46,7 @@ function getProductInfoById($products, $id){
             $prodInfo .= "<p>$prodDisc</p>";
             $prodInfo .= "</div>";
             $prodInfo .= "<span>$prodPrice</span>";
-            $prodInfo .= "<form action='../index.php' method='POST'>";
+            $prodInfo .= "<form action='index.php' method='POST'>";
             $prodInfo .= "<input type='hidden' name='prodId' value='$prodId'>";
             $prodInfo .= "<input type='hidden' name='action' value='addToCart'>";
             $prodInfo .= "<input name='submit' type='submit' value='Add To Cart'>";

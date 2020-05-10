@@ -17,7 +17,9 @@
         </header>
         <main>
             <section>
+                <?php if(isset($backToBrowse)){echo $backToBrowse;} ?>
                 <?php echo $prodInfo; ?>
+                <?php if(isset($message)){echo $message;} ?>
             </section>
         </main>
         <footer>

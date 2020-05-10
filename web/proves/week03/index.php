@@ -20,8 +20,25 @@ switch ($action) {
 
     $prodInfo = getProductInfoById($products, $id);
 
+    $backToBrowse = "<a href=../week03/index.php";
+
     include 'views/product-page.php';
     
+  exit;
+
+  case 'addToCart':
+
+    $id = filter_input(INPUT_POST, 'prodId', FILTER_SANITIZE_NUMBER_INT);
+
+    $cartContent = array();
+    array_push($cartContent, $id);
+
+    $_SESSION['cartContent'] = $cartContent;
+
+    $message = "<p class='red'>Successfully added to cart</p>";
+
+    include 'views/product-page.php';
+
   exit;
 
   default:
