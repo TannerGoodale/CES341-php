@@ -30,7 +30,10 @@ switch ($action) {
 
     $id = filter_input(INPUT_POST, 'prodId', FILTER_SANITIZE_NUMBER_INT);
 
-    $cartContent = array();
+    if(!isset($cartContent)){
+        $cartContent = array();
+    }
+    
     array_push($cartContent, $id);
 
     $_SESSION['cartContent'] = $cartContent;
