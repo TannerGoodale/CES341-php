@@ -21,7 +21,7 @@ function buildProductTNDisplay($products){
         $img = $prodTN['img-location'];
         // Build body using defined data
         $tnd .= "<div class='container'>";
-        $tnd .= "<img src='$img'>";
+        $tnd .= "<a href='../week03/index.php?action=getProdInfo&id=$prodId' class='tn'><img src='$img'></a>";
         $tnd .= "<a href='../week03/index.php?action=getProdInfo&id=$prodId' class='name'>$prodName</a>";
         $tnd .= "</div>";
     }
