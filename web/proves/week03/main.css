@@ -5,5 +5,5 @@ header{
     display: flex;
 }
 .tn{
-    width: 7.7em;
+    max-width: 3em;
 }
