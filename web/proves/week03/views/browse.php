@@ -13,7 +13,7 @@
 <body>
     <div id="container">
         <header>
-            <?php include '../modules/header.php';?>
+            <?php include 'modules/header.php';?>
         </header>
         <main>
             <section>
@@ -21,7 +21,7 @@
             </section>
         </main>
         <footer>
-        <?php include '../modules/footer.php';?>
+        <?php include 'modules/footer.php';?>
         </footer>
     </div>
 </body>
