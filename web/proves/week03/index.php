@@ -7,6 +7,10 @@ require_once '../week03/library/fakedb.php';
 // Create or access a Session 
 session_start();
 
+if(!isset($_SESSION['cartContent'])) {
+    $_SESSION['cartContent'] = array();
+}
+
 // Create controll structure for dynamic site navigation
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -30,7 +34,7 @@ switch ($action) {
 
     $id = filter_input(INPUT_POST, 'prodId', FILTER_SANITIZE_NUMBER_INT);
 
-    $_SESSION['cartContent'] .= $id;
+    array_push($_SESSION['cartContent'],$id);
 
     $_SESSION['message'] = "<p class='red'>Successfully added to cart</p>";
 
