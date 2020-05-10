@@ -40,10 +40,9 @@ switch ($action) {
             $prodInfo .= "<input name='submit' type='submit' value='Add To Cart'>";
             $prodInfo .= "</form>";
             $prodInfo .= "</div>";
-            return $prodInfo;
     }
 
-    include '../views/product-page.php';
+    include 'views/product-page.php';
     
   exit;
 
