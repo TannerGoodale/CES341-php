@@ -52,10 +52,12 @@ switch ($action) {
         }
         $cartData .= "</div>";
         } else {
-            $cartData = "<p>There is nothing in your cart.  Click <a href='../week03/index.php'>here</a> to browse.";
+            $cartData = "<p>There is nothing in your cart.";
         }
 
     $backToBrowse = "<a href=../week03/index.php>< Back to Browse</a>";
+
+    $dump = "<a href='../week03/index.php?action=emptyCart'>Empty Cart</a>";
 
     include 'views/cart.php';
 
@@ -71,7 +73,15 @@ switch ($action) {
 
     header("Location: http://cryptic-sands-03658.herokuapp.com/proves/week03/index.php?action=cart");
 
-  exit;  
+  exit;
+
+  case 'emptyCart':
+
+    $_SESSION['cartContent'] = array();
+
+    header("Location: http://cryptic-sands-03658.herokuapp.com/proves/week03/index.php?action=cart");
+
+  exit;
 
   default:
 

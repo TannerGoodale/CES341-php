@@ -19,6 +19,7 @@
             <section>
                 <?php echo $backToBrowse; ?>
                 <?php echo $cartData; ?>
+                <?php echo $dump; ?>
             </section>
         </main>
         <footer>
