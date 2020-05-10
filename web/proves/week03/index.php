@@ -106,7 +106,7 @@ switch ($action) {
     $zip = filter_input(INPUT_POST, 'zip', FILTER_SANITIZE_STRING);
 
     if(empty($fname) || empty($lname) || empty($street) || empty($state) || empty($zip)){
-        $message = "<p class='red'>Please fill out all form fields<p>";
+        $_SESSION['message'] = "<p class='red'>Please fill out all form fields<p>";
         header("Location: http://cryptic-sands-03658.herokuapp.com/proves/week03/index.php?action=checkOut");
         exit;
     }
