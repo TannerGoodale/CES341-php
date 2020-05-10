@@ -86,7 +86,8 @@ function getProductSummeryById($products, $id){
 }
 
 function checkOutForm(){
-    $f = "<form action='index.php?action=confirm' method='POST'>";
+    $f = "<form action='index.php?' method='POST'>";
+    $f .= "<input type='hidden' name='action' value='confirm'>";
     $f .= "<label for='fname'>First name:</label>";
     $f .= "<input type='text' id='fname' name='fname'>";
     $f .= "<label for='lname'>Last name:</label>";
@@ -97,7 +98,6 @@ function checkOutForm(){
     $f .= "<input type='text' id='state' name='state'>";
     $f .= "<label for='zip'>Zip Code:</label>";
     $f .= "<input type='text' id='zip' name='zip'>";
-    $f .= "<input type='hidden' name='action' value='confirm'>";
     $f .= "<input type='submit' name='action' value='Check Out'>";
     $f .= "</form>";
     return $f;
