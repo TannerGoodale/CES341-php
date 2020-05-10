@@ -16,7 +16,7 @@ switch ($action) {
 
   case 'getProdInfo':
     
-     $id = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_NUMBER_INT);
+     $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
     
     switch ($id) {
         case '1':
