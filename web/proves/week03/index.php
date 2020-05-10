@@ -16,7 +16,7 @@ switch ($action) {
 
   case 'getProdInfo':
     
-     $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+    $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 
     $prodInfo = getProductInfoById($products, $id);
 
@@ -37,7 +37,7 @@ switch ($action) {
 
     $_SESSION['message'] = "<p class='red'>Successfully added to cart</p>";
 
-    header('Location: views/product-page.php');
+    header("Location: ../week03/index.php?getProdInfo&id=$id");
 
   exit;
 
