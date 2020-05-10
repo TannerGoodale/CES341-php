@@ -73,7 +73,7 @@ function getProductSummeryById($products, $id){
             $prodInfo = "<div id='container-fluid'>";
             $prodInfo .= "<a href='../week03/index.php?action=getProdInfo&id=$prodId'><img class='tn' src='$img'></a>";
             $prodInfo .= "<a href='../week03/index.php?action=getProdInfo&id=$prodId'>$prodName</a>";
-            $prodInfo .= "<span>$prodPrice</span>";
+            $prodInfo .= "<p>$prodPrice</p>";
             $prodInfo .= "<form action='index.php' method='POST'>";
             $prodInfo .= "<input type='hidden' name='prodId' value='$prodId'>";
             $prodInfo .= "<input type='hidden' name='action' value='removeFromCart'>";
@@ -84,17 +84,4 @@ function getProductSummeryById($products, $id){
         } 
     }
 }
-
-/* function loopCartContent($products){
-    if($_SESSION['cartContent'] == TRUE){
-        $cartData = "<div>";
-        for($i = 0; $i < count($_SESSION['cartContent']); $i++ ){
-            $idTemp = $_SESSION['cartContent'][$i];
-            $cartData .= getProductSummeryById($products, $idTemp);
-        }
-        $cartData .= "</div>";
-    } else {
-        $message = "<p>Your cart is empty.  Click <a href='../week03/index.php'>here</a> to browse.</p>";
-    }
-} */
 ?>
