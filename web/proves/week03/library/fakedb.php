@@ -39,7 +39,7 @@ function getProductInfoById($products, $id){
             $prodPrice = $prod['price'];
             $img = $prod['img-location'];
             // Build body
-            $prodInfo = "<div id='container'>";
+            $prodInfo = "<div id='container-fluid'>";
             $prodInfo .= "<h1>$prodName</h1>";
             $prodInfo .= "<div class='side-by-side'>";
             $prodInfo .= "<img src='$img'>";
