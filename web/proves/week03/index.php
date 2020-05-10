@@ -20,7 +20,7 @@ switch ($action) {
 
     $prodInfo = getProductInfoById($products, $id);
 
-    $backToBrowse = "<a href=../week03/index.php";
+    $backToBrowse = "<a href=../week03/index.php>< Back to Browse</a>";
 
     include 'views/product-page.php';
     
