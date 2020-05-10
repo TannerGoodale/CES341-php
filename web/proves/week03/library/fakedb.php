@@ -21,7 +21,7 @@ function buildProductTNDisplay($products){
         $img = $prodTN['img-location'];
         // Build body using defined data
         $tnd .= "<div class='container'>";
-        $tnd .= "<img srec='$img'>";
+        $tnd .= "<img src='$img'>";
         $tnd .= "<a href='../week03/index.php?action=getProdInfo&id=$prodId' class='name'>$prodName</a>";
         $tnd .= "</div>";
     }
@@ -46,9 +46,9 @@ function getProductInfoById($products, $id){
             $prodInfo .= "<p>$prodDisc</p>";
             $prodInfo .= "</div>";
             $prodInfo .= "<span>$prodPrice</span>";
-            $prodInfo .= "<form action='../index.php' method='GET'>";
+            $prodInfo .= "<form action='../index.php' method='POST'>";
             $prodInfo .= "<input type='hidden' name='prodId' value='$prodId'>";
-            $prodInfo .= "<input type='hidden' name='action' value='add'>";
+            $prodInfo .= "<input type='hidden' name='action' value='addToCart'>";
             $prodInfo .= "<input name='submit' type='submit' value='Add To Cart'>";
             $prodInfo .= "</form>";
             $prodInfo .= "</div>";
