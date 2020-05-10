@@ -38,7 +38,7 @@ switch ($action) {
 
     $_SESSION['message'] = "<p class='red'>Successfully added to cart</p>";
 
-    header("Location: ../week03/index.php?getProdInfo&id=$id");
+    header("Location: http://cryptic-sands-03658.herokuapp.com/proves/week03/index.php?getProdInfo&id=$id");
 
   exit;
 
@@ -69,7 +69,7 @@ switch ($action) {
 
     unset($_SESSION['cartContent'][$key]);
 
-    header("Location: ../week03/index.php?cart");
+    header("Location: http://cryptic-sands-03658.herokuapp.com/proves/week03/index.php?action=cart");
 
   exit;  
 
