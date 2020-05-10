@@ -52,7 +52,7 @@ switch ($action) {
         }
         $cartData .= "</div>";
         } else {
-            $cartData = "<p>There is nothing in your cart";
+            $cartData = "<p>There is nothing in your cart.  Click <a href='../week03/index.php'>here</a> to browse.";
         }
 
     include 'views/cart.php';
