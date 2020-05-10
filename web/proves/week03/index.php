@@ -55,6 +55,8 @@ switch ($action) {
             $cartData = "<p>There is nothing in your cart";
         }
 
+    include 'cart.php';
+
   exit; 
 
   default:
