@@ -44,7 +44,16 @@ switch ($action) {
 
   case 'cart':
 
-    $cartData = loopCartContent($products);
+    if($_SESSION['cartContent'] == TRUE){
+        $cartData = "<div>";
+        for($i = 0; $i < count($_SESSION['cartContent']); $i++ ){
+            $idTemp = $_SESSION['cartContent'][$i];
+            $cartData .= getProductSummeryById($products, $idTemp);
+        }
+        $cartData .= "</div>";
+        } else {
+            $cartData = "<p>There is nothing in your cart";
+        }
 
   exit; 
 

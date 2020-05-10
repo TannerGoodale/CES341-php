@@ -85,7 +85,7 @@ function getProductSummeryById($products, $id){
     }
 }
 
-function loopCartContent($products){
+/* function loopCartContent($products){
     if($_SESSION['cartContent'] == TRUE){
         $cartData = "<div>";
         for($i = 0; $i < count($_SESSION['cartContent']); $i++ ){
@@ -96,5 +96,5 @@ function loopCartContent($products){
     } else {
         $message = "<p>Your cart is empty.  Click <a href='../week03/index.php'>here</a> to browse.</p>";
     }
-}
+} */
 ?>
