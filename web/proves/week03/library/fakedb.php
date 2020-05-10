@@ -1,4 +1,7 @@
 <?php
+// This page functions as a database and builder functions page.
+// Ideally, a database would be used and you would make models that call from the database.
+// Also, a function page should be seperate as well.
 
 // prod Id, name, discription, price, img location...
 
@@ -54,6 +57,44 @@ function getProductInfoById($products, $id){
             $prodInfo .= "</div>";
             return $prodInfo;
         } 
+    }
+}
+
+function getProductSummeryById($products, $id){
+    foreach($products as $prod){
+        if($prod['id']==$id){
+            // Define data
+            $prodId = $prod['id'];
+            $prodName = $prod['name'];
+            $prodDisc = $prod['disc'];
+            $prodPrice = $prod['price'];
+            $img = $prod['img-location'];
+            // Build body
+            $prodInfo = "<div id='container-fluid'>";
+            $prodInfo .= "<img class='tn' src='$img'>";
+            $prodInfo .= "<a href='../week03/index.php?action=getProdInfo&id=$prodId'>$prodName</p>";
+            $prodInfo .= "<span>$prodPrice</span>";
+            $prodInfo .= "<form action='index.php' method='POST'>";
+            $prodInfo .= "<input type='hidden' name='prodId' value='$prodId'>";
+            $prodInfo .= "<input type='hidden' name='action' value='removeFromCart'>";
+            $prodInfo .= "<input name='submit' type='submit' value='Remove'>";
+            $prodInfo .= "</form>";
+            $prodInfo .= "</div>";
+            return $prodInfo;
+        } 
+    }
+}
+
+function loopCartContent($products){
+    if($_SESSION['cartContent'] == TRUE){
+        $cartData = "<div>";
+        for($i = 0; $i < count($_SESSION['cartContent']); $i++ ){
+            $idTemp = $_SESSION['cartContent'][$i];
+            $cartData .= getProductSummeryById($products, $idTemp);
+        }
+        $cartData .= "</div>";
+    } else {
+        $message = "<p>Your cart is empty.  Click <a href='../week03/index.php'>here</a> to browse.</p>";
     }
 }
 ?>

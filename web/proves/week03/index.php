@@ -42,6 +42,12 @@ switch ($action) {
 
   exit;
 
+  case 'cart':
+
+    $cartData = loopCartContent($products);
+
+  exit; 
+
   default:
 
     $tnDisplay = buildProductTNDisplay($products);

@@ -19,7 +19,6 @@
             <section>
                 <?php if(isset($backToBrowse)){echo $backToBrowse;} ?>
                 <?php echo $prodInfo; ?>
-                <?php if(isset($_SESSION['message'])){$_SESSION['message'];} ?>
             </section>
         </main>
         <footer>
