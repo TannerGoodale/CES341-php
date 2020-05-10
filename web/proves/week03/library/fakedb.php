@@ -53,10 +53,7 @@ function getProductInfoById($products, $id){
             $prodInfo .= "</form>";
             $prodInfo .= "</div>";
             return $prodInfo;
-        } else {
-            $prodInfo = "<p>An error has occoured.</p>";
-            return $prodInfo;
-        }
+        } 
     }
 }
 ?>
