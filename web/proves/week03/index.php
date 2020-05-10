@@ -8,8 +8,8 @@ require_once '../week03/library/fakedb.php';
 session_start();
 
 // Create array if it does not yet exsist
-if(!isset($cartContent)){
-$cartContent = array();
+if(!isset($cartContent[0])){
+    $cartContent = array();
 }
 
 // Create controll structure for dynamic site navigation
