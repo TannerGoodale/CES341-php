@@ -20,7 +20,7 @@ switch ($action) {
     
     switch ($id) {
         case '1':
-            $prod = array ( "id"=>"1", "name"=>"Spring Apple", "disc"=>"A wonderful spring time herbal tea. Made from all natural dried apple, lemon peels, hibiscus flowers and other fresh friuts.", "price"=>"$4.00", "img-location"=>"../assests/apple.jpg" );
+            $prod = array ( "id"=>"1", "name"=>"Spring Apple", "disc"=>"A wonderful spring time herbal tea. Made from all natural dried apple, lemon peels, hibiscus flowers and other fresh friuts.", "price"=>"$4.00", "img-location"=>"assests/apple.jpg" );
             $prodId = $prod['id'];
             $prodName = $prod['name'];
             $prodDisc = $prod['disc'];
