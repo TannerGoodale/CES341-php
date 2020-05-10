@@ -59,6 +59,8 @@ switch ($action) {
 
     $dump = "<a href='../week03/index.php?action=emptyCart'>Empty Cart</a>";
 
+    $checkOut = "<a href='../week03/index.php?action=checkOut'>Check Out</a>";
+
     include 'views/cart.php';
 
   exit; 
@@ -82,6 +84,49 @@ switch ($action) {
     header("Location: http://cryptic-sands-03658.herokuapp.com/proves/week03/index.php?action=cart");
 
   exit;
+
+  case 'checkOut':
+
+    $form = checkOutForm();
+
+    $returnToCart = '<a href="index.php?action=cart">Cart</a>';
+
+    include 'views/checkout.php';
+
+  exit;  
+
+  case 'confrim':
+
+    // fname, lname, street, state, zip
+
+    $_SESSION['cartContent'] = array();
+
+    $fname = filter_input(INPUT_POST, 'fname', FILTER_SANITIZE_STRING);
+    $lname = filter_input(INPUT_POST, 'lname', FILTER_SANITIZE_STRING);
+    $street = filter_input(INPUT_POST, 'street', FILTER_SANITIZE_STRING);
+    $state = filter_input(INPUT_POST, 'state', FILTER_SANITIZE_STRING);
+    $zip = filter_input(INPUT_POST, 'zip', FILTER_SANITIZE_STRING);
+
+    if(empty($fname) || empty($lname) || empty($street) || empty($state) || empty($zip)){
+        $message = "<p class='red'>Please fill out all form fields<p>";
+        header("Location: http://cryptic-sands-03658.herokuapp.com/proves/week03/index.php?action=checkOut");
+        exit;
+    }
+
+    $confirmMessage = "<div id='container'>";
+    if($_SESSION['cartContent'] == TRUE){
+        $cartData = "<div>";
+        for($i = 0; $i < count($_SESSION['cartContent']); $i++ ){
+            $idTemp = $_SESSION['cartContent'][$i];
+            $cartData .= getProductSummeryById($products, $idTemp);
+        }
+        $cartData .= "</div>";
+        } else {
+            $cartData = "<p>There is nothing in your cart.";
+        }
+    $confirmMessage .= "<p>Shipping to $fname + ' ' + $lname, at $street<br>$state + ' ' + $zip</p>";
+    $confirmMessage .= "</div>";
+    
 
   default:
 

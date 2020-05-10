@@ -17,7 +17,8 @@
         </header>
         <main>
             <section>
-                <!--Add content here-->
+                <?php echo $confirmMessage ?>
+                <?php echo $cartData ?>
             </section>
         </main>
         <footer>

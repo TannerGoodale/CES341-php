@@ -20,6 +20,7 @@
                 <?php echo $backToBrowse; ?>
                 <?php echo $cartData; ?>
                 <?php echo $dump; ?>
+                <?php if($_SESSION['cartContent'] == TRUE){echo $checkOut;} ?>
             </section>
         </main>
         <footer>

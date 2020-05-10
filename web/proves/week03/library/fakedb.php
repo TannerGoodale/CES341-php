@@ -84,4 +84,22 @@ function getProductSummeryById($products, $id){
         } 
     }
 }
+
+function checkOutForm(){
+    $f = "<form action='index.php' method='POST'>>";
+    $f .= "<label for='fname'>First name:</label>";
+    $f .= "<input type='text' id='fname' name='fname'>";
+    $f .= "<label for='lname'>Last name:</label>";
+    $f .= "<input type='text' id='lname' name='lname'>";
+    $f .= "<label for='street'>Street name and number:</label>";
+    $f .= "<input type='text' id='street' name='street'>";
+    $f .= "<label for='state'>State:</label>";
+    $f .= "<input type='text' id='state' name='state'>";
+    $f .= "<label for='zip'>Zip Code:</label>";
+    $f .= "<input type='text' id='zip' name='zip'>";
+    $f .= "<input type='hidden' name='action' value='confirm'>";
+    $f .= "<input type='submit' name='action' value='Check Out'>";
+    $f .= "</form>";
+    return $f;
+}
 ?>
