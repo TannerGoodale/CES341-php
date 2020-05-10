@@ -35,9 +35,9 @@ switch ($action) {
 
     $_SESSION['cartContent'] = $cartContent;
 
-    $message = "<p class='red'>Successfully added to cart</p>";
+    $_SESSION['message'] = "<p class='red'>Successfully added to cart</p>";
 
-    include 'views/product-page.php';
+    header('Location: views/product-page.php');
 
   exit;
 
