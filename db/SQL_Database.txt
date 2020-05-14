@@ -1,0 +1,60 @@
+#Steept Club Database Format;
+
+DROP TABLE IF EXISTS inventory;
+CREATE TABLE inventory (
+  invId SERIAL PRIMARY KEY,
+  invName varchar(50) NOT NULL DEFAULT '',
+  invDescription text NOT NULL,
+  invImage varchar(50) NOT NULL DEFAULT '',
+  invThumbnail varchar(50) NOT NULL DEFAULT '',
+  invPrice decimal(10,2) NOT NULL DEFAULT '0.00',
+  invStock int NOT NULL DEFAULT '0',
+  categoryId int NOT NULL,
+  UNIQUE (invId, invName)
+);
+
+DROP TABLE IF EXISTS categories;
+CREATE TABLE categories (
+  categoryId SERIAL PRIMARY KEY,
+  categoryName varchar(30) NOT NULL,
+  UNIQUE (categoryId, categoryName)
+);
+
+DROP TYPE IF EXISTS enum CASCADE;
+CREATE TYPE enum AS ENUM ('1', '2', '3');
+
+DROP TABLE IF EXISTS clients;
+ CREATE TABLE clients (
+  clientId SERIAL PRIMARY KEY,
+  clientFirstname varchar(15) NOT NULL,
+  clientLastname varchar(25) NOT NULL,
+  clientEmail varchar(40) NOT NULL,
+  clientPassword varchar(255) NOT NULL,
+  clientLevel enum NOT NULL DEFAULT '1',
+  UNIQUE (clientId, clientEmail)
+);
+
+DROP TABLE IF EXISTS reviews;
+ CREATE TABLE reviews (
+  reviewId SERIAL PRIMARY KEY,
+  reviewText TEXT NOT NULL,
+  reviewDate TIME WITH TIME ZONE NOT NULL,
+  invId int REFERENCES inventory (invId),
+  clientId int REFERENCES clients (clientId),
+  UNIQUE (reviewId)
+);
+
+DROP TABLE IF EXISTS orders;
+ CREATE TABLE orders (
+  orderId SERIAL PRIMARY KEY,
+  orderText TEXT NOT NULL,
+  orderDate TIME WITH TIME ZONE NOT NULL,
+  clientId int REFERENCES clients (clientId),
+  UNIQUE (orderId)
+);
+
+ALTER TABLE inventory
+ADD CONSTRAINT constraint_fk
+FOREIGN KEY (categoryId)
+REFERENCES categories(categoryId);
+
