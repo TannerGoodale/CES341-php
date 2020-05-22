@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>Acme Home Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" media="screen" href="http://cryptic-sands-03658.herokuapp.com/project/css/main.css">
+  <link rel="stylesheet" media="screen" href="../css/main.css">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
 
 <header>
 
-    <?php include 'http://cryptic-sands-03658.herokuapp.com/project/modules/header.php'; ?>
+    <?php include '../modules/header.php'; ?>
 
 </header>
 
@@ -32,7 +32,7 @@
 
 <footer>
 
-    <?php include 'http://cryptic-sands-03658.herokuapp.com/project/acme/modules/footer.php'; ?>
+    <?php include '../modules/footer.php'; ?>
 
 </footer>
 
