@@ -1,7 +1,5 @@
 <?php
-//Acme Controller
-
-//Root links will start with this string, "http://cryptic-sands-03658.herokuapp.com/"
+//Steept Controller
 
 // Create or access a Session 
 session_start();
@@ -9,11 +7,11 @@ session_start();
 try{
     
 // Get the database connection file
-include ('project/library/connections.php');
+include ('/library/connections.php');
 // Get the acme model for use as needed
-include ('project/model/acme-model.php');
+include ('/model/acme-model.php');
 // Get the functions library
-include ('project/library/functions.php');
+include ('/library/functions.php');
 
     }
      catch (Exception $ex) {
@@ -39,11 +37,11 @@ if ($action == NULL) {
 
 switch ($action) {
     case 'Home':
-        include 'project/view/home.php';
+        include ('/view/home.php');
         break;
     
     default:
-        include 'project/view/home.php';
+        include ('/view/home.php');
 }
 
 ?>
