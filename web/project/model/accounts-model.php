@@ -37,7 +37,7 @@ function checkExistingEmail($clientEmail)
                 // Connect to database
                 $db   = steeptConnect();
                 // Prepare the SQL statment
-                $sql  = 'SELECT clientEmail FROM clients WHERE clientEmail = :email';
+                $sql  = 'SELECT clientemail FROM clients WHERE clientemail = :email';
                 $stmt = $db->prepare($sql);
                 // Connect ':email" to the parameter "$clientEmail"
                 $stmt->bindValue(':email', $clientEmail, PDO::PARAM_STR);
@@ -62,8 +62,8 @@ function getClient($clientEmail)
                 // Connect to the database
                 $db   = steeptConnect();
                 // Prepare the SQL statment
-                $sql  = 'SELECT clientId, clientFirstname, clientLastname, clientEmail, 
-            clientLevel, clientPassword FROM clients WHERE clientEmail = :email';
+                $sql  = 'SELECT clientid, clientfirstname, clientlastname, clientemail, 
+            clientlevel, clientpassword FROM clients WHERE clientemail = :email';
                 $stmt = $db->prepare($sql);
                 // Bind ':email' to the parameter "$clientEmail"
                 $stmt->bindValue(':email', $clientEmail, PDO::PARAM_STR);
@@ -83,11 +83,11 @@ function getClientById($clientId)
                 // Connect to the database
                 $db   = steeptConnect();
                 // Prepare the SQL statment
-                $sql  = 'SELECT clientId, clientFirstname, clientLastname, clientEmail, 
-    clientLevel, clientPassword FROM clients WHERE clientId = :clientId';
+                $sql  = 'SELECT clientid, clientfirstname, clientlastname, clientemail, 
+    clientlevel, clientpassword FROM clients WHERE clientid = :clientid';
                 $stmt = $db->prepare($sql);
                 // Bind ':email' to the parameter "$clientEmail"
-                $stmt->bindValue(':clientId', $clientId, PDO::PARAM_STR);
+                $stmt->bindValue(':clientid', $clientId, PDO::PARAM_STR);
                 // Execute the statment
                 $stmt->execute();
                 // Put the results into a variable
@@ -104,14 +104,14 @@ function updateUserInfo($clientFirstName, $clientLastName, $clientEmail, $client
                 // Connect to the database
                 $db   = steeptConnect();
                 // Prepare the SQL statment
-                $sql  = 'UPDATE clients SET clientFirstname = :clientFirstname, clientLastname = :clientLastname, clientEmail = :clientEmail
-    WHERE clientId = :clientId';
+                $sql  = 'UPDATE clients SET clientfirstname = :clientfirstname, clientlastname = :clientlastname, clientemail = :clientemail
+    WHERE clientid = :clientid';
                 $stmt = $db->prepare($sql);
                 // Bind ':email' to the parameter "$clientEmail"
-                $stmt->bindValue(':clientFirstname', $clientFirstName, PDO::PARAM_STR);
-                $stmt->bindValue(':clientLastname', $clientLastName, PDO::PARAM_STR);
-                $stmt->bindValue(':clientEmail', $clientEmail, PDO::PARAM_STR);
-                $stmt->bindValue(':clientId', $clientId, PDO::PARAM_STR);
+                $stmt->bindValue(':clientfirstname', $clientFirstName, PDO::PARAM_STR);
+                $stmt->bindValue(':clientlastname', $clientLastName, PDO::PARAM_STR);
+                $stmt->bindValue(':clientemail', $clientEmail, PDO::PARAM_STR);
+                $stmt->bindValue(':clientid', $clientId, PDO::PARAM_STR);
                 // Execute the statment
                 $stmt->execute();
                 // Put the results into a variable
@@ -128,12 +128,12 @@ function passwordUpdate($hashUpdatedPassword, $clientId)
                 // Connect to the database
                 $db   = steeptConnect();
                 // Prepare the SQL statment
-                $sql  = 'UPDATE clients SET clientPassword = :clientPassword
-    WHERE clientId = :clientId';
+                $sql  = 'UPDATE clients SET clientpassword = :clientpassword
+    WHERE clientid = :clientid';
                 $stmt = $db->prepare($sql);
                 // Bind ':email' to the parameter "$clientEmail"
-                $stmt->bindValue(':clientPassword', $hashUpdatedPassword, PDO::PARAM_STR);
-                $stmt->bindValue(':clientId', $clientId, PDO::PARAM_STR);
+                $stmt->bindValue(':clientpassword', $hashUpdatedPassword, PDO::PARAM_STR);
+                $stmt->bindValue(':clientid', $clientId, PDO::PARAM_STR);
                 // Execute the statment
                 $stmt->execute();
                 // Put the results into a variable

@@ -1,6 +1,6 @@
 <?php
-if(!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1){
-    header("Location: http://cryptic-sands-03658.herokuapp.com/project/index.php");
+if(!$_SESSION['loggedin'] || $_SESSION['clientData']['clientlevel'] == 1){
+    header("Location: /project/index.php");
 }
 ?>
 <!doctype html>
@@ -10,7 +10,7 @@ if(!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1){
   <meta charset="utf-8">
   <title>Add Category</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" media="screen" href="http://cryptic-sands-03658.herokuapp.com/project/css/main.css">
+  <link rel="stylesheet" media="screen" href="../css/main.css">
 </head>
 
 <body>
@@ -19,7 +19,7 @@ if(!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1){
 
 <header>
 
-    <?php include 'http://cryptic-sands-03658.herokuapp.com/project/modules/header.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/project/modules/header.php'; ?>
 
 </header>
 
@@ -34,7 +34,7 @@ if(!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1){
     }
     ?>
 
-    <form action="http://cryptic-sands-03658.herokuapp.com/project/products/index.php" method="POST" enctype="multipart/form-data">
+    <form action="../products/index.php" method="POST" enctype="multipart/form-data">
         <div>
             <label for="categoryName">New Category Name</label>
             <input type="text" name="categoryName" id="categoryName" required>
@@ -48,7 +48,7 @@ if(!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1){
 
 <footer>
 
-    <?php include 'http://cryptic-sands-03658.herokuapp.com/project/modules/footer.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/project/modules/footer.php'; ?>
 
 </footer>
 

@@ -1,6 +1,6 @@
 <?php
 if(!$_SESSION['loggedin']){
-    header("Location: http://cryptic-sands-03658.herokuapp.com/project/index.php");
+    header("Location: /project/index.php");
 }
 if (isset($_SESSION['message'])) {
     $message = $_SESSION['message'];
@@ -16,7 +16,7 @@ if (isset($_SESSION['reviewMessage'])){
   <meta charset="utf-8">
   <title>Admin View</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" media="screen" href="http://cryptic-sands-03658.herokuapp.com/project/css/main.css">
+  <link rel="stylesheet" media="screen" href="../css/main.css">
 </head>
 
 <body>
@@ -25,13 +25,13 @@ if (isset($_SESSION['reviewMessage'])){
 
 <header>
 
-    <?php include 'http://cryptic-sands-03658.herokuapp.com/project/modules/header.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/project/modules/header.php'; ?>
 
 </header>
 
 <main>
 
-    <h1><?php echo $_SESSION['clientData']['clientFirstname'].' '.$_SESSION['clientData']['clientLastname']?></h1>
+    <h1><?php echo $_SESSION['clientData']['clientfirstname'].' '.$_SESSION['clientData']['clientlastname']?></h1>
 
     <?php
     if (isset($message)) {
@@ -45,15 +45,15 @@ if (isset($_SESSION['reviewMessage'])){
     <p>You are logged in</p>
 
     <ul>
-        <li>First Name: <?php echo $_SESSION['clientData']['clientFirstname'];?></li>
-        <li>Last Name: <?php echo $_SESSION['clientData']['clientLastname'];?></li>
-        <li>Client Email: <?php echo $_SESSION['clientData']['clientEmail'];?></li>
+        <li>First Name: <?php echo $_SESSION['clientData']['clienttirstname'];?></li>
+        <li>Last Name: <?php echo $_SESSION['clientData']['clientlastname'];?></li>
+        <li>Client Email: <?php echo $_SESSION['clientData']['clientemail'];?></li>
     </ul>
 
-    <a href="http://cryptic-sands-03658.herokuapp.com/project/accounts/index.php?action=updateUser" id="userUpdateLink">Update Account Information</a>
+    <a href="../accounts/index.php?action=updateUser" id="userUpdateLink">Update Account Information</a>
 
     <?php
-    if($_SESSION['clientData']['clientLevel'] > 1){
+    if($_SESSION['clientData']['clientlevel'] > 1){
         echo '<p>Administrative Functions<p>';
         echo $advancedMessage;
     }
@@ -69,7 +69,7 @@ if (isset($_SESSION['reviewMessage'])){
 
 <footer>
 
-    <?php include 'http://cryptic-sands-03658.herokuapp.com/project/modules/footer.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/project/modules/footer.php'; ?>
 
 </footer>
 

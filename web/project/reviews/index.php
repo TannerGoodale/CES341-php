@@ -6,12 +6,12 @@
 session_start();
 
 // Grab libraries and models
-require_once 'http://cryptic-sands-03658.herokuapp.com/project/library/connections.php';
-require_once 'http://cryptic-sands-03658.herokuapp.com/project/model/acme-model.php';
-require_once 'http://cryptic-sands-03658.herokuapp.com/project/model/products-model.php';
-require_once 'http://cryptic-sands-03658.herokuapp.com/project/model/uploads-model.php';
-require_once 'http://cryptic-sands-03658.herokuapp.com/project/library/functions.php';
-require_once 'http://cryptic-sands-03658.herokuapp.com/project/model/reviews-model.php';
+require_once '../library/connections.php';
+require_once '../model/acme-model.php';
+require_once '../model/products-model.php';
+require_once '../model/uploads-model.php';
+require_once '../library/functions.php';
+require_once '../model/reviews-model.php';
 
 // Get the array of categories
 $categories = getCategories();
@@ -41,7 +41,7 @@ case 'addReview':
     // Make sure no values are empty
     if (empty($reviewText) || empty($invId) || empty($clientId)){
         $reviewMessage = "<p class='errorMsg'>Something went wrong, you've been sent to this page to reset your user data.  Please try your review again.  Make sure JavaScript is enabled on your computer! </p>";
-        include 'http://cryptic-sands-03658.herokuapp.com/project/accounts/index.php';
+        include '../accounts/index.php';
         exit;
     }
 
@@ -57,7 +57,7 @@ case 'addReview':
     // Take array and put it through a builder function
     $results = buildFormReviews($reviews);
 
-    header ("Location:http://cryptic-sands-03658.herokuapp.com/project/products/index.php?action=getProdInfo&invId=$invId");
+    header ("../products/index.php?action=getProdInfo&invId=$invId");
 
 break;
 // Deliver a view to edit a review
@@ -76,7 +76,7 @@ case 'editReviewView':
     $reviewDisplay = buildEditForm($review);
 
     // Display the review for editing
-    include 'http://cryptic-sands-03658.herokuapp.com/project/view/update-review.php';
+    include '../view/update-review.php';
 
 break;
 // Handle the review update
@@ -91,7 +91,7 @@ case 'reviewUpdate':
     $reviewDisplay = buildEditForm($review);
     if (empty($reviewText) || empty($reviewId)){
         $message = "<p>Please add text to your review.</p>";
-        include 'http://cryptic-sands-03658.herokuapp.com/project/view/update-review.php';
+        include '../project/view/update-review.php';
         exit;
     }
 
@@ -101,11 +101,11 @@ case 'reviewUpdate':
     //Verify that the update worked
     if ($upResults == 1) {
         $_SESSION['reviewMessage'] = "<p class='bump-right red'>Your review was updated!<p>";
-        header("Location: http://cryptic-sands-03658.herokuapp.com/project/accounts/index.php");
+        header("Location: ../project/accounts/index.php");
         exit;
     }else{
         $message = "<p class='bump-right red'>Something went wrong, please try again</p>";
-        include 'http://cryptic-sands-03658.herokuapp.com/project/view/update-review.php';
+        include '../project/view/update-review.php';
         exit;
     }
 
@@ -126,7 +126,7 @@ case 'deleteReviewView':
      $reviewDisplay = buildDeleteForm($review);
  
      // Display the review for editing
-     include 'http://cryptic-sands-03658.herokuapp.com/project/view/delete-review.php';
+     include '../project/view/delete-review.php';
 
 break;
 // Handle the review deletion
@@ -135,26 +135,26 @@ case 'deleteReview':
     $reviewId = filter_input(INPUT_POST, 'reviewId', FILTER_SANITIZE_NUMBER_INT);
 
     if(empty($reviewId)){
-        include 'http://cryptic-sands-03658.herokuapp.com/project/view/500.php';
+        include '../project/view/500.php';
     }
 
     $reviewResults = deleteReview($reviewId);
 
     if ($reviewResults == 1) {
         $_SESSION['reviewMessage'] = "<p class='bump-right red'>Your review was deleted.<p>";
-        header("Location: http://cryptic-sands-03658.herokuapp.com/project/accounts/index.php");
+        header("Location: ../project/accounts/index.php");
         exit;
     }
 
 break;
 //Send people back to the admin page if they click cancel
 case 'cancel':
-    header("Location: http://cryptic-sands-03658.herokuapp.com/project/accounts/index.php");
+    header("Location: ../project/accounts/index.php");
 break;
 // Deliver the "admin" view (admin.php has built in functionality to redirect to the home page if a user is not logged in)
 default:
 
-header("Location: http://cryptic-sands-03658.herokuapp.com/project/accounts/index.php");
+header("Location: ../project/accounts/index.php");
 
 break;
 }

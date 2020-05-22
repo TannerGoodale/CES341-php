@@ -1,6 +1,6 @@
 <?php
-if(!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1){
-    header("Location: ../index.php");
+if(!$_SESSION['loggedin'] || $_SESSION['clientData']['clientlevel'] == 1){
+    header("Location: /project/index.php");
 }
 ?>
 <!doctype html>
@@ -8,12 +8,12 @@ if(!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1){
 
 <head>
   <meta charset="utf-8">
-  <title><?php if(isset($prodInfo['invName'])){ 
-       echo "Delete $prodInfo[invName] ";} 
+  <title><?php if(isset($prodInfo['invname'])){ 
+       echo "Delete $prodInfo[invname] ";} 
        elseif(isset($invName)) { echo $invName; }?> 
        | Acme, Inc</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" media="screen" href="http://cryptic-sands-03658.herokuapp.com/project/css/main.css">
+  <link rel="stylesheet" media="screen" href="/project/css/main.css">
 </head>
 
 <body>
@@ -22,7 +22,7 @@ if(!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1){
 
 <header>
 
-    <?php include 'http://cryptic-sands-03658.herokuapp.com/project/modules/header.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/project/modules/header.php'; ?>
 
 </header>
 
@@ -40,7 +40,7 @@ if (isset($message)) {
 }
 ?>
 
-<form action="http://cryptic-sands-03658.herokuapp.com/project/products/index.php" method="POST" enctype="multipart/form-data">
+<form action="/project/products/index.php" method="POST" enctype="multipart/form-data">
         <div>
             <label for="invName">Product Name</label>
             <input type="text" name="invName" id="invName" <?php if(isset($invName)){ echo "value='$invName'"; } 
@@ -63,7 +63,7 @@ if (isset($message)) {
 
 <footer>
 
-    <?php include 'http://cryptic-sands-03658.herokuapp.com/project/modules/footer.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/project/modules/footer.php'; ?>
 
 </footer>
 

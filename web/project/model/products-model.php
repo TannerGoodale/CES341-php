@@ -9,14 +9,14 @@ function addCategory($categoryName)
                 //Connect to acme database
                 $db   = steeptConnect();
                 // The SQL statement
-                $sql  = 'INSERT INTO categories (categoryName)
-    VALUES (:categoryName)';
+                $sql  = 'INSERT INTO categories (categoryname)
+    VALUES (:categoryname)';
                 // Create the prepared statement using the acme connection
                 $stmt = $db->prepare($sql);
                 // The next line will replace the the placeholder in the SQL
                 // statement with the actual value in the variable
                 // and tells the database it's datatype.
-                $stmt->bindValue(':categoryName', $categoryName, PDO::PARAM_STR);
+                $stmt->bindValue(':categoryname', $categoryName, PDO::PARAM_STR);
                 // Insert the data
                 $stmt->execute();
                 // Ask how many rows changed as a result of our insert
@@ -34,20 +34,20 @@ function addProduct($invName, $invDescription, $invImage, $invThumbnail, $invPri
                 //Connect to acme database
                 $db   = steeptConnect();
                 // The SQL statement
-                $sql  = 'INSERT INTO inventory (invName, invDescription, invImage, invThumbnail, invPrice, invStock, categoryId)
-    VALUES (:invName, :invDescription, :invImage, :invThumbnail, :invPrice, :invStock, :categoryId)';
+                $sql  = 'INSERT INTO inventory (invname, invdescription, invimage, invthumbnail, invprice, invstock, categoryid)
+    VALUES (:invname, :invdescription, :invimage, :invthumbnail, :invprice, :invstock, :categoryid)';
                 // Create the prepared statement using the acme connection
                 $stmt = $db->prepare($sql);
                 // The next twelve lines replace the placeholders in the SQL
                 // statement with the actual values in the variables
                 // and tells the database the type of data it is.
-                $stmt->bindValue(':invName', $invName, PDO::PARAM_STR);
-                $stmt->bindValue(':invDescription', $invDescription, PDO::PARAM_STR);
-                $stmt->bindValue(':invImage', $invImage, PDO::PARAM_STR);
-                $stmt->bindValue(':invThumbnail', $invThumbnail, PDO::PARAM_STR);
-                $stmt->bindValue(':invPrice', $invPrice, PDO::PARAM_STR);
-                $stmt->bindValue(':invStock', $invStock, PDO::PARAM_INT);
-                $stmt->bindValue(':categoryId', $categoryId, PDO::PARAM_INT);
+                $stmt->bindValue(':invname', $invName, PDO::PARAM_STR);
+                $stmt->bindValue(':invdescription', $invDescription, PDO::PARAM_STR);
+                $stmt->bindValue(':invimage', $invImage, PDO::PARAM_STR);
+                $stmt->bindValue(':invthumbnail', $invThumbnail, PDO::PARAM_STR);
+                $stmt->bindValue(':invprice', $invPrice, PDO::PARAM_STR);
+                $stmt->bindValue(':invstock', $invStock, PDO::PARAM_INT);
+                $stmt->bindValue(':categoryid', $categoryId, PDO::PARAM_INT);
                 // Insert the data
                 $stmt->execute();
                 // Ask how many rows changed as a result of our insert
@@ -62,9 +62,9 @@ function addProduct($invName, $invDescription, $invImage, $invThumbnail, $invPri
 function getProductsByCategory($categoryId)
 {
                 $db   = steeptConnect();
-                $sql  = ' SELECT * FROM inventory WHERE categoryId = :categoryId';
+                $sql  = ' SELECT * FROM inventory WHERE categoryid = :categoryid';
                 $stmt = $db->prepare($sql);
-                $stmt->bindValue(':categoryId', $categoryId, PDO::PARAM_INT);
+                $stmt->bindValue(':categoryid', $categoryId, PDO::PARAM_INT);
                 $stmt->execute();
                 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $stmt->closeCursor();
@@ -75,9 +75,9 @@ function getProductsByCategory($categoryId)
 function getProductInfo($invId)
 {
                 $db   = steeptConnect();
-                $sql  = 'SELECT * FROM inventory WHERE invId = :invId';
+                $sql  = 'SELECT * FROM inventory WHERE invid = :invid';
                 $stmt = $db->prepare($sql);
-                $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
+                $stmt->bindValue(':invid', $invId, PDO::PARAM_INT);
                 $stmt->execute();
                 $prodInfo = $stmt->fetch(PDO::FETCH_ASSOC);
                 $stmt->closeCursor();
@@ -90,23 +90,23 @@ function updateProduct($invName, $invDescription, $invImage, $invThumbnail, $inv
                 //Connect to acme database
                 $db   = steeptConnect();
                 // The SQL statement
-                $sql  = 'UPDATE inventory SET invName = :invName, 
-  invDescription = :invDescription, invImage = :invImage, 
-  invThumbnail = :invThumbnail, invPrice = :invPrice, 
-  invStock = :invStock, categoryId = :categoryId WHERE invId = :invId';
+                $sql  = 'UPDATE inventory SET invname = :invname, 
+  invdescription = :invdescription, invimage = :invimage, 
+  invthumbnail = :invrhumbnail, invprice = :invprice, 
+  invstock = :invstock, categoryid = :categoryid WHERE invid = :invid';
                 // Create the prepared statement using the acme connection
                 $stmt = $db->prepare($sql);
                 // The next twelve lines replace the placeholders in the SQL
                 // statement with the actual values in the variables
                 // and tells the database the type of data it is.
-                $stmt->bindValue(':invName', $invName, PDO::PARAM_STR);
-                $stmt->bindValue(':invDescription', $invDescription, PDO::PARAM_STR);
-                $stmt->bindValue(':invImage', $invImage, PDO::PARAM_STR);
-                $stmt->bindValue(':invThumbnail', $invThumbnail, PDO::PARAM_STR);
-                $stmt->bindValue(':invPrice', $invPrice, PDO::PARAM_STR);
-                $stmt->bindValue(':invStock', $invStock, PDO::PARAM_INT);
-                $stmt->bindValue(':categoryId', $categoryId, PDO::PARAM_INT);
-                $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
+                $stmt->bindValue(':invname', $invName, PDO::PARAM_STR);
+                $stmt->bindValue(':invdescription', $invDescription, PDO::PARAM_STR);
+                $stmt->bindValue(':invimage', $invImage, PDO::PARAM_STR);
+                $stmt->bindValue(':invthumbnail', $invThumbnail, PDO::PARAM_STR);
+                $stmt->bindValue(':invprice', $invPrice, PDO::PARAM_STR);
+                $stmt->bindValue(':invstock', $invStock, PDO::PARAM_INT);
+                $stmt->bindValue(':categoryid', $categoryId, PDO::PARAM_INT);
+                $stmt->bindValue(':invid', $invId, PDO::PARAM_INT);
                 // Update the data
                 $stmt->execute();
                 // Ask how many rows changed as a result of our insert
@@ -123,11 +123,11 @@ function deleteProduct($invId)
                 //Connect to acme database
                 $db   = steeptConnect();
                 // The SQL statement
-                $sql  = 'DELETE FROM inventory WHERE invId = :invId';
+                $sql  = 'DELETE FROM inventory WHERE invid = :invid';
                 // Create the prepared statement using the acme connection
                 $stmt = $db->prepare($sql);
                 // Bind invId to the param invId
-                $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
+                $stmt->bindValue(':invid', $invId, PDO::PARAM_INT);
                 // Delete the data
                 $stmt->execute();
                 // Ask how many rows changed as a result of our insert
@@ -142,9 +142,9 @@ function deleteProduct($invId)
 function getProductsByCategoryName($categoryName)
 {
                 $db   = steeptConnect();
-                $sql  = 'SELECT * FROM inventory WHERE categoryId IN (SELECT categoryId FROM categories WHERE categoryName = :categoryName)';
+                $sql  = 'SELECT * FROM inventory WHERE categoryid IN (SELECT categoryid FROM categories WHERE categoryname = :categoryname)';
                 $stmt = $db->prepare($sql);
-                $stmt->bindValue(':categoryName', $categoryName, PDO::PARAM_STR);
+                $stmt->bindValue(':categoryname', $categoryName, PDO::PARAM_STR);
                 $stmt->execute();
                 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $stmt->closeCursor();
@@ -155,9 +155,9 @@ function getProductsByCategoryName($categoryName)
 function getProductInfoById($invId)
 {
                 $db   = steeptConnect();
-                $sql  = 'SELECT * FROM inventory WHERE invId = :invId';
+                $sql  = 'SELECT * FROM inventory WHERE invid = :invid';
                 $stmt = $db->prepare($sql);
-                $stmt->bindValue('invId', $invId, PDO::PARAM_INT);
+                $stmt->bindValue('invid', $invId, PDO::PARAM_INT);
                 $stmt->execute();
                 $productInfo = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $stmt->closeCursor();
@@ -167,7 +167,7 @@ function getProductInfoById($invId)
 // Get the list of products
 function getProductBasics() {
     $db = steeptConnect();
-    $sql = 'SELECT invName, invId FROM inventory ORDER BY invName ASC';
+    $sql = 'SELECT invname, invid FROM inventory ORDER BY invname ASC';
     $stmt = $db->prepare($sql);
     $stmt->execute();
     $products = $stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -30,7 +30,7 @@
     }
     ?>
 
-    <form action="../accounts/index.php" method="POST" enctype="multipart/form-data">
+    <form action="/project/accounts/index.php" method="POST" enctype="multipart/form-data">
         <div>
             <label for="clientEmail">Email</label>
             <input type="email" id="clientEmail" name="clientEmail" <?php if(isset($clientEmail)){echo "value='$clientEmail'";} ?> required>

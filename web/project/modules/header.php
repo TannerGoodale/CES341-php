@@ -1,7 +1,7 @@
 <!-- Section for the header and navigation, dynamic php page section. -->
 <div id="top">
-    <a id="logoLink" href="http://cryptic-sands-03658.herokuapp.com/project/" title="The Home page for SteeptClub.com, the home of Primuim Herbal Teas.">
-        <img id="logo" src="http://cryptic-sands-03658.herokuapp.com/project/images/site/logo.gif" alt="Logo for SteeptClub.com, the home of Primuim Herbal Teas.">
+    <a id="logoLink" href="/project/" title="The Home page for SteeptClub.com, the home of Primuim Herbal Teas.">
+        <img id="logo" src="/project/images/site/logo.gif" alt="Logo for SteeptClub.com, the home of Primuim Herbal Teas.">
     </a>
 
     <div class='over-under'>
@@ -9,7 +9,7 @@
         if($_SESSION){
             if($_SESSION['loggedin']){
                 $userFirstName = $_SESSION['clientData']['clientFirstname'];
-                echo "<a href='http://cryptic-sands-03658.herokuapp.com/project/accounts/index.php'><span class='welcome'>Welcome $userFirstName</span></a>";
+                echo "<a href='/project/accounts/index.php'><span class='welcome'>Welcome $userFirstName</span></a>";
             }
         }
         ?>
@@ -17,17 +17,17 @@
         <?php
         if($_SESSION){
             if(!$_SESSION['loggedin']){
-            echo'<a href="http://cryptic-sands-03658.herokuapp.com/project/accounts/index.php?action=Login" title="Account portal, log into your SteeptClub account"><img id="accountGif" src="http://cryptic-sands-03658.herokuapp.com/project/images/site/account.gif" alt="Account folder icon">
+            echo'<a href="/project/accounts/index.php?action=Login" title="Account portal, log into your SteeptClub account"><img id="accountGif" src="http://cryptic-sands-03658.herokuapp.com/project/images/site/account.gif" alt="Account folder icon">
                 <span>My Account</span>
                 </a>';
             }
             elseif($_SESSION['loggedin']){
-                echo'<a href="http://cryptic-sands-03658.herokuapp.com/project/accounts/index.php?action=logout" title="Log out of your account">
+                echo'<a href="/project/accounts/index.php?action=logout" title="Log out of your account">
                 <span>Logout</span>
                 </a>';
             }
         }else{
-            echo'<a href="http://cryptic-sands-03658.herokuapp.com/project/accounts/index.php?action=Login" title="Account portal, log into your acme account"><img id="accountGif" src="http://cryptic-sands-03658.herokuapp.com/project/images/site/account.gif" alt="Account folder icon">
+            echo'<a href="/project/accounts/index.php?action=Login" title="Account portal, log into your acme account"><img id="accountGif" src="http://cryptic-sands-03658.herokuapp.com/project/images/site/account.gif" alt="Account folder icon">
                 <span>My Account</span>
                 </a>';
         }
@@ -46,5 +46,5 @@
         <li><a href="/" title="Visit the acme rocket page to see all of our rockets">Rocket</a></li>
         <li><a href="/" title="Visit the acme trap page to see all of our razor sharp traps">Trap</a></li>
     </ul>-->
-    <?php //echo $navList; ?>
+    <?php echo $navList; ?>
 </nav>

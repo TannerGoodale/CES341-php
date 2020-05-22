@@ -5,7 +5,7 @@
  catList.addEventListener("change", function () { 
   let categoryId = catList.value; 
   console.log(`categoryId is: ${categoryId}`); 
-  let catIdURL = "http://cryptic-sands-03658.herokuapp.com/project/products/index.php?action=getInventoryItems&categoryId=" + categoryId; 
+  let catIdURL = "/project/products/index.php?action=getInventoryItems&categoryId=" + categoryId; 
   fetch(catIdURL) 
   .then(function (response) { 
    if (response.ok) { 
@@ -35,8 +35,8 @@ function buildProductList(data) {
     data.forEach(function (element) { 
      console.log(element.invId + ", " + element.invName); 
      dataTable += `<tr><td>${element.invName}</td>`; 
-     dataTable += `<td><a href='http://cryptic-sands-03658.herokuapp.com/project/products?action=mod&id=${element.invId}' title='Click to modify'>Modify</a></td>`; 
-     dataTable += `<td><a href='http://cryptic-sands-03658.herokuapp.com/project/products?action=del&id=${element.invId}' title='Click to delete'>Delete</a></td></tr>`; 
+     dataTable += `<td><a href='/project/products?action=mod&id=${element.invId}' title='Click to modify'>Modify</a></td>`; 
+     dataTable += `<td><a href='/project/products?action=del&id=${element.invId}' title='Click to delete'>Delete</a></td></tr>`; 
     }) 
     dataTable += '</tbody>'; 
     // Display the contents in the Product Management view 

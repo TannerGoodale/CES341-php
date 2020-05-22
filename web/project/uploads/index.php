@@ -6,11 +6,11 @@
 session_start();
 
 // Grab libraries and models
-require_once 'http://cryptic-sands-03658.herokuapp.com/project/library/connections.php';
-require_once 'http://cryptic-sands-03658.herokuapp.com/project/model/acme-model.php';
-require_once 'http://cryptic-sands-03658.herokuapp.com/project/model/products-model.php';
-require_once 'http://cryptic-sands-03658.herokuapp.com/project/model/uploads-model.php';
-require_once 'http://cryptic-sands-03658.herokuapp.com/project/library/functions.php';
+require_once '../library/connections.php';
+require_once '../model/acme-model.php';
+require_once '../model/products-model.php';
+require_once '../model/uploads-model.php';
+require_once '../library/functions.php';
 
 // Get the array of categories
 $categories = getCategories();
@@ -22,7 +22,7 @@ $navList = createNav($categories);
 * Variables for use with the Image Upload Functionality
 * **************************************************** */
 // directory name where uploaded images are stored
-$image_dir = 'http://cryptic-sands-03658.herokuapp.com/project/images/products';
+$image_dir = '/project/images/products';
 // The path is the full path from the server root
 $image_dir_path = $image_dir;
 
@@ -127,7 +127,7 @@ $products = getProductBasics();
 // Build a select list of product information for the view
 $prodSelect = buildProductsSelect($products);
       
-include 'http://cryptic-sands-03658.herokuapp.com/project/view/image-admin.php';
+include '../view/image-admin.php';
 exit;
 
 break;

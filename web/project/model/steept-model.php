@@ -1,6 +1,6 @@
 <?php
 
-//This is for the Acme Model.
+//This is for the Steept Model.
 
 function getCategories()
 {
@@ -9,7 +9,7 @@ function getCategories()
                 $db = steeptConnect();
                 
                 //Query info from database.
-                $sql = 'SELECT * FROM categories ORDER BY categoryName ASC';
+                $sql = 'SELECT * FROM categories ORDER BY categoryname ASC';
                 
                 //Create prepared statment using acmeConnect function and pre made SQL query.
                 $stmt = $db->prepare($sql);

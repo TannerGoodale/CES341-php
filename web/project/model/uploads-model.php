@@ -5,12 +5,12 @@
 // Add image information to the database table
 function storeImages($imgPath, $invId, $imgName) {
     $db = steeptConnect();
-    $sql = 'INSERT INTO images (invId, imgPath, imgName) VALUES (:invId, :imgPath, :imgName)';
+    $sql = 'INSERT INTO images (invid, imgpath, imgname) VALUES (:invid, :imgpath, :imgname)';
     $stmt = $db->prepare($sql);
     // Store the full size image information
-    $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
-    $stmt->bindValue(':imgPath', $imgPath, PDO::PARAM_STR);
-    $stmt->bindValue(':imgName', $imgName, PDO::PARAM_STR);
+    $stmt->bindValue(':invid', $invId, PDO::PARAM_INT);
+    $stmt->bindValue(':imgpath', $imgPath, PDO::PARAM_STR);
+    $stmt->bindValue(':imgname', $imgName, PDO::PARAM_STR);
     $stmt->execute();
         
     // Make and store the thumbnail image information
@@ -18,9 +18,9 @@ function storeImages($imgPath, $invId, $imgName) {
     $imgPath = makeThumbnailName($imgPath);
     // Change name in file name
     $imgName = makeThumbnailName($imgName);
-    $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
-    $stmt->bindValue(':imgPath', $imgPath, PDO::PARAM_STR);
-    $stmt->bindValue(':imgName', $imgName, PDO::PARAM_STR);
+    $stmt->bindValue(':invid', $invId, PDO::PARAM_INT);
+    $stmt->bindValue(':imgpath', $imgPath, PDO::PARAM_STR);
+    $stmt->bindValue(':imgname', $imgName, PDO::PARAM_STR);
     $stmt->execute();
     
     $rowsChanged = $stmt->rowCount();
@@ -31,7 +31,7 @@ function storeImages($imgPath, $invId, $imgName) {
    // Get Image Information from images table
 function getImages() {
     $db = steeptConnect();
-    $sql = 'SELECT imgId, imgPath, imgName, imgDate, inventory.invId, invName FROM images JOIN inventory ON images.invId = inventory.invId';
+    $sql = 'SELECT imgid, imgpath, imgname, imgdate, inventory.invid, invname FROM images JOIN inventory ON images.invid = inventory.invid';
     $stmt = $db->prepare($sql);
     $stmt->execute();
     $imageArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -42,9 +42,9 @@ function getImages() {
    // Delete image information from the images table
 function deleteImage($id) {
     $db = steeptConnect();
-    $sql = 'DELETE FROM images WHERE imgId = :imgId';
+    $sql = 'DELETE FROM images WHERE imgid = :imgid';
     $stmt = $db->prepare($sql);
-    $stmt->bindValue(':imgId', $id, PDO::PARAM_INT);
+    $stmt->bindValue(':imgid', $id, PDO::PARAM_INT);
     $stmt->execute();
     $result = $stmt->rowCount();
     $stmt->closeCursor();
@@ -54,7 +54,7 @@ function deleteImage($id) {
    // Check for an existing image
 function checkExistingImage($imgName){
     $db = steeptConnect();
-    $sql = "SELECT imgName FROM images WHERE imgName = :name";
+    $sql = "SELECT imgname FROM images WHERE imgname = :name";
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':name', $imgName, PDO::PARAM_STR);
     $stmt->execute();
@@ -63,12 +63,12 @@ function checkExistingImage($imgName){
     return $imageMatch;
    }
 
-// Get information of -tn images using invId
+// Get information of -tn images using invid
 function getTnInfo($invId){
     $db = steeptConnect();
-    $sql = "SELECT imgPath, imgName FROM images WHERE imgPath LIKE '%-tn%' AND invId = :invId";
+    $sql = "SELECT imgpath, imgname FROM images WHERE imgpath LIKE '%-tn%' AND invid = :invid";
     $stmt = $db->prepare($sql);
-    $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
+    $stmt->bindValue(':invid', $invId, PDO::PARAM_INT);
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $stmt->closeCursor();

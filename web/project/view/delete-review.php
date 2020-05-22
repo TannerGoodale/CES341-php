@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>Template</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" media="screen" href="/acme/css/main.css">
+  <link rel="stylesheet" media="screen" href="/project/css/main.css">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
 
 <header>
 
-    <?php include 'http://cryptic-sands-03658.herokuapp.com/project/modules/header.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/project/modules/header.php'; ?>
 
 </header>
 
@@ -30,7 +30,7 @@
 
 <footer>
 
-    <?php include 'http://cryptic-sands-03658.herokuapp.com/project/modules/footer.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/project/modules/footer.php'; ?>
 
 </footer>
 

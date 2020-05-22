@@ -113,7 +113,7 @@ $action = filter_input(INPUT_POST, 'action');
       
 
       // Check to see if email has already been used
-      if($clientEmail != $_SESSION['clientData']['clientEmail']){
+      if($clientEmail != $_SESSION['clientData']['clientemail']){
       $existingEmail = checkExistingEmail($clientEmail);
       if($existingEmail){
          $message = '<p class="notice">That email address already exists. Please try a different one.</p>';
@@ -213,7 +213,7 @@ $action = filter_input(INPUT_POST, 'action');
       $clientData = getClient($clientEmail);
       // Compare the password just submitted against
       // the hashed password for the matching client
-      $hashCheck = password_verify($clientPassword, $clientData['clientPassword']);
+      $hashCheck = password_verify($clientPassword, $clientData['clientpassword']);
       // If the hashes don't match create an error
       // and return to the login view
       if (!$hashCheck) {
@@ -236,7 +236,7 @@ $action = filter_input(INPUT_POST, 'action');
       $advancedMessage = '<p>Use the link below to manage products</p>';
       $advancedMessage .= '<p><a href="../products/">Product Management</a></p>';
 
-      $clientId = $_SESSION['clientData']['clientId'];
+      $clientId = $_SESSION['clientData']['clientid'];
 
       $reviews = getClientReviews($clientId);
  
@@ -246,7 +246,7 @@ $action = filter_input(INPUT_POST, 'action');
       // Set the cookie to have the current user's first name displayed.
       // Check if the firstname cookie exists, get its value
 
-      setcookie("firstname", '$_SESSION["clientData"]["clientFirstname"]', time() -360000, "/");
+      setcookie("firstname", '$_SESSION["clientData"]["clientfirstname"]', time() -360000, "/");
       
       include '../view/admin.php';
       exit;
@@ -258,7 +258,7 @@ $action = filter_input(INPUT_POST, 'action');
     break;
     default:
     
-     $clientId = $_SESSION['clientData']['clientId'];
+     $clientId = $_SESSION['clientData']['clientid'];
 
      $reviews = getClientReviews($clientId);
 

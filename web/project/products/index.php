@@ -5,17 +5,17 @@
 session_start();
 
 // Get the database connection file
-require_once 'http://cryptic-sands-03658.herokuapp.com/project/library/connections.php';
+require_once '../library/connections.php';
 // Get the acme model for use as needed
-require_once 'http://cryptic-sands-03658.herokuapp.com/project/model/acme-model.php';
+require_once '../model/acme-model.php';
 // Get the products model for use as needed
-require_once 'http://cryptic-sands-03658.herokuapp.com/project/model/products-model.php';
+require_once '../model/products-model.php';
 // Get the functions library
-require_once 'http://cryptic-sands-03658.herokuapp.com/project/library/functions.php';
+require_once '../library/functions.php';
 // Get the uploads model for use as needed
-require_once 'http://cryptic-sands-03658.herokuapp.com/project/model/uploads-model.php';
+require_once '../model/uploads-model.php';
 // Get the reviews model
-require_once 'http://cryptic-sands-03658.herokuapp.com/project/model/reviews-model.php';
+require_once '../model/reviews-model.php';
 
 // Get the array of categories
 $categories = getCategories();
@@ -32,10 +32,10 @@ if ($action == NULL)
 switch ($action)
 {
     case 'AddCat':
-        include('http://cryptic-sands-03658.herokuapp.com/project/view/add-category.php');
+        include('../view/add-category.php');
         break;
     case 'AddProd':
-        include('http://cryptic-sands-03658.herokuapp.com/project/view/add-product.php');
+        include('../view/add-product.php');
         break;
     case 'addCat':
         // Filter and store the data
@@ -45,7 +45,7 @@ switch ($action)
         if (empty($categoryName))
         {
             $message = '<p class="errorMsg">Please provide the name of the new category.</p>';
-            include 'http://cryptic-sands-03658.herokuapp.com/project/view/add-category.php';
+            include '../view/add-category.php';
             exit;
         }
         
@@ -55,13 +55,13 @@ switch ($action)
         // Check and report the result
         if ($catOutcome === 1)
         {
-            header("Location: http://cryptic-sands-03658.herokuapp.com/project/products/index.php");
+            header("Location: ../products/index.php");
             exit;
         }
         else
         {
             $message = "<p>Sorry, the category could not be added. Please try again with something else.</p>";
-            include('http://cryptic-sands-03658.herokuapp.com/project/view/add-category.php');
+            include('../view/add-category.php');
             exit;
         }
         break;
@@ -83,7 +83,7 @@ switch ($action)
         if ($checkedPrice == 0)
         {
             $priceMessage = '<p class="errorMsg">Please enter a valid price and provide information for all empty form fields.</p>';
-            include 'http://cryptic-sands-03658.herokuapp.com/project/view/add-product.php';
+            include '../view/add-product.php';
             exit;
         }
         
@@ -91,7 +91,7 @@ switch ($action)
         if (empty($invName) || empty($invDescription) || empty($invImage) || empty($invThumbnail) || empty($checkedPrice) || empty($invStock) || empty($categoryId))
         {
             $message = '<p class="errorMsg">Please provide information for all empty form fields.</p>';
-            include 'http://cryptic-sands-03658.herokuapp.com/project/view/add-product.php';
+            include '../view/add-product.php';
             exit;
         }
         
@@ -102,13 +102,13 @@ switch ($action)
         if ($prodOutcome === 1)
         {
             $message = "<p>The new product has been sucessfully added!</p>";
-            include('http://cryptic-sands-03658.herokuapp.com/project/view/add-product.php');
+            include('../view/add-product.php');
             exit;
         }
         else
         {
             $message = "<p>Sorry, the category could not be added. Please try again with something else.</p>";
-            include('http://cryptic-sands-03658.herokuapp.com/project/view/add-product.php');
+            include('../view/add-product.php');
             exit;
         }
         break;
@@ -133,7 +133,7 @@ switch ($action)
         {
             $message = 'Sorry, no product information could be found.';
         }
-        include 'http://cryptic-sands-03658.herokuapp.com/project/view/prod-update.php';
+        include '../view/prod-update.php';
         exit;
         break;
     
@@ -144,7 +144,7 @@ switch ($action)
         {
             $message = 'Sorry, no product information could be found.';
         }
-        include 'http://cryptic-sands-03658.herokuapp.com/project/view/prod-delete.php';
+        include '../view/prod-delete.php';
         exit;
         break;
     
@@ -166,7 +166,7 @@ switch ($action)
         if ($checkedPrice == 0)
         {
             $priceMessage = '<p class="errorMsg">Please enter a valid price and provide information for all empty form fields.</p>';
-            include 'http://cryptic-sands-03658.herokuapp.com/project/view/prod-update.php';
+            include '../view/prod-update.php';
             exit;
         }
         
@@ -174,7 +174,7 @@ switch ($action)
         if (empty($invName) || empty($invDescription) || empty($invImage) || empty($invThumbnail) || empty($checkedPrice) || empty($invStock) || empty($categoryId) || empty($invId))
         {
             $message = '<p class="errorMsg">Please provide information for all empty form fields.</p>';
-            include 'http://cryptic-sands-03658.herokuapp.com/project/view/prod-update.php';
+            include '../view/prod-update.php';
             exit;
         }
         
@@ -186,13 +186,13 @@ switch ($action)
         {
             $message             = "<p>The product has been sucessfully updated!</p>";
             $_SESSION['message'] = $message;
-            header('location: http://cryptic-sands-03658.herokuapp.com/project/products/');
+            header('location: ../project/products/');
             exit;
         }
         else
         {
             $message = "<p>Sorry, the product could not be updated. Please try again.</p>";
-            include('http://cryptic-sands-03658.herokuapp.com/project/view/prod-update.php');
+            include('../project/view/prod-update.php');
             exit;
         }
         break;
@@ -208,14 +208,14 @@ switch ($action)
         {
             $message             = "<p class='notice'>Congratulations, $invName was successfully deleted.</p>";
             $_SESSION['message'] = $message;
-            header('location: http://cryptic-sands-03658.herokuapp.com/project/products/');
+            header('location: ../project/products/');
             exit;
         }
         else
         {
             $message             = "<p class='notice'>Error: $invName was not deleted.</p>";
             $_SESSION['message'] = $message;
-            header('location: http://cryptic-sands-03658.herokuapp.com/project/products/');
+            header('location: ../project/products/');
             exit;
         }
         
@@ -233,7 +233,7 @@ switch ($action)
         {
             $prodDisplay = buildProductsDisplay($products);
         }
-        include 'http://cryptic-sands-03658.herokuapp.com/project/view/category.php';
+        include '../project/view/category.php';
         
         break;
     
@@ -245,9 +245,9 @@ switch ($action)
 
         if ($_SESSION){
             if($_SESSION['loggedin']){
-                $clientFirstname = $_SESSION['clientData']['clientFirstname'];
-                $clientLastname = $_SESSION['clientData']['clientLastname'];
-                $clientId = $_SESSION['clientData']['clientId'];
+                $clientFirstname = $_SESSION['clientData']['clientfirstname'];
+                $clientLastname = $_SESSION['clientData']['clientlastname'];
+                $clientId = $_SESSION['clientData']['clientid'];
                 // Check to see if a user has an exsisting review on this page.
                 $reviewCheck = checkReviewStatus($invId, $clientId);
                 if($reviewCheck == TRUE){
@@ -273,7 +273,7 @@ switch ($action)
             $productDisplay = buildProductPageDisplay($productInfo);
             foreach ($productInfo as $data)
             {
-                $prodName = $data['invName'];
+                $prodName = $data['invname'];
             }
         }
 
@@ -297,15 +297,15 @@ switch ($action)
 
         if ($_SESSION){
             if (!$_SESSION['loggedin']){
-            $preReviewCheck = "<p class='bump-right'>Please <a href='http://cryptic-sands-03658.herokuapp.com/project/accounts/index.php?action=Login'>log in</a> if you want to write a review.</p>";
+            $preReviewCheck = "<p class='bump-right'>Please <a href='../accounts/index.php?action=Login'>log in</a> if you want to write a review.</p>";
             }elseif($reviewed){
                 // var_dump($reviewCheck);
                 // exit;
-                $preReviewCheck = "<p class='bump-right'>You have already reviewed this product.  Click <a href='http://cryptic-sands-03658.herokuapp.com/project/reviews/index.php?action=editReviewView&reviewId=$reviewCheck[reviewId]'>here</a> to edit it.</p>";
+                $preReviewCheck = "<p class='bump-right'>You have already reviewed this product.  Click <a href='../reviews/index.php?action=editReviewView&reviewId=$reviewCheck[reviewId]'>here</a> to edit it.</p>";
             }else{
                 //Build a dynamic drop-down select list
                 $reviewForm = "<p class='downx2'>Write a review for this product</p>";
-                $reviewForm.= "<form class='review-form' action='http://cryptic-sands-03658.herokuapp.com/project/reviews/index.php' method='POST'>";
+                $reviewForm.= "<form class='review-form' action='../reviews/index.php' method='POST'>";
                 $reviewForm.= "<h4 class='down'>Writing as $screenName</h4>";
                 $reviewForm.= "<textarea name='reviewText' id='reviewText' placeholder='Write a review here...' class='box' required></textarea>";
                 $reviewForm.= "<input name='submit' type='submit' value='Submit Review' class='submitBtn'>";
@@ -315,17 +315,17 @@ switch ($action)
                 $reviewForm.= "<input type='hidden' name='invId' value='$invId'>";
     
                 //Define clientId
-                $clientId = $_SESSION['clientData']['clientId'];
+                $clientId = $_SESSION['clientData']['clientid'];
     
                 $reviewForm.= "<input type='hidden' name='clientId' value='$clientId'>";
                 $reviewForm.= '</form>';
     
             }
         }else{
-            $preReviewCheck = "<p class='bump-right'>Please <a href='http://cryptic-sands-03658.herokuapp.com/project/accounts/index.php?action=Login'>log in</a> if you want to write a review.</p>";
+            $preReviewCheck = "<p class='bump-right'>Please <a href='../accounts/index.php?action=Login'>log in</a> if you want to write a review.</p>";
         }
 
-        include 'http://cryptic-sands-03658.herokuapp.com/project/view/product-detail.php';
+        include '../project/view/product-detail.php';
         
         break;
     
@@ -333,7 +333,7 @@ switch ($action)
         $categoryList = buildCategoryList($categories);
         
         
-        include('http://cryptic-sands-03658.herokuapp.com/project/view/product-management.php');
+        include('../project/view/product-management.php');
         break;
 }
 

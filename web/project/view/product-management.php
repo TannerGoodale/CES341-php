@@ -1,6 +1,6 @@
 <?php
-if(!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1){
-    header("Location: http://cryptic-sands-03658.herokuapp.com/project/index.php");
+if(!$_SESSION['loggedin'] || $_SESSION['clientData']['clientlevel'] == 1){
+    header("Location: ../index.php");
 }
 if (isset($_SESSION['message'])) {
     $message = $_SESSION['message'];
@@ -13,7 +13,7 @@ if (isset($_SESSION['message'])) {
   <meta charset="utf-8">
   <title>Product Managment Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" media="screen" href="http://cryptic-sands-03658.herokuapp.com/project/css/main.css">
+  <link rel="stylesheet" media="screen" href="/project/css/main.css">
 </head>
 
 <body>
@@ -22,7 +22,7 @@ if (isset($_SESSION['message'])) {
 
 <header>
 
-    <?php include 'http://cryptic-sands-03658.herokuapp.com/project/modules/header.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/project/modules/header.php'; ?>
 
 </header>
 
@@ -30,9 +30,9 @@ if (isset($_SESSION['message'])) {
 
     <h2>Welcome to the product managment page</h2>
 
-    <div><a href="http://cryptic-sands-03658.herokuapp.com/project/products/index.php?action=AddCat">Category Creation</a></div>
+    <div><a href="../products/index.php?action=AddCat">Category Creation</a></div>
 
-    <div><a href="http://cryptic-sands-03658.herokuapp.com/project/products/index.php?action=AddProd">Product Creation</a></div>
+    <div><a href="../products/index.php?action=AddProd">Product Creation</a></div>
 
 
     <?php
@@ -54,13 +54,13 @@ if (isset($_SESSION['message'])) {
 
 <footer>
 
-    <?php include 'http://cryptic-sands-03658.herokuapp.com/project/modules/footer.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/project/modules/footer.php'; ?>
 
 </footer>
 
 </div>
 
-<script src="http://cryptic-sands-03658.herokuapp.com/project/js/products.js"></script>
+<script src="/project/js/products.js"></script>
 
 </body>
 

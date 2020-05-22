@@ -10,7 +10,7 @@ if (isset($_SESSION['message'])) {
   <meta charset="utf-8">
   <title>Image Managment | Acme, Inc.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" media="screen" href="http://cryptic-sands-03658.herokuapp.com/project/css/main.css">
+  <link rel="stylesheet" media="screen" href="/project/css/main.css">
 </head>
 
 <body>
@@ -19,7 +19,7 @@ if (isset($_SESSION['message'])) {
 
 <header>
 
-    <?php include 'http://cryptic-sands-03658.herokuapp.com/project/modules/header.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/project/modules/header.php'; ?>
 
 </header>
 
@@ -37,7 +37,7 @@ if (isset($_SESSION['message'])) {
     }
     ?>
 
-    <form action="http://cryptic-sands-03658.herokuapp.com/project/uploads/" method="post" enctype="multipart/form-data">
+    <form action="/project/uploads/" method="post" enctype="multipart/form-data">
         <label for="invItem">Product</label><br>
         <?php echo $prodSelect; ?><br><br>
         <label>Upload Image:</label><br>
@@ -62,7 +62,7 @@ if (isset($_SESSION['message'])) {
 
 <footer>
 
-    <?php include 'http://cryptic-sands-03658.herokuapp.com/project/modules/footer.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/project/modules/footer.php'; ?>
 
 </footer>
 

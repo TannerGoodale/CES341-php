@@ -1,19 +1,19 @@
 <?php
-if(!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1){
-    header("Location: http://cryptic-sands-03658.herokuapp.com/project/index.php");
+if(!$_SESSION['loggedin'] || $_SESSION['clientData']['clientlevel'] == 1){
+    header("Location: /project/index.php");
 }
 ?>
 <?php
 // Build a drop-down menu using the select form using the $categories array then make it sticky
-$catList = '<select name="categoryId" id="categoryId">';
+$catList = '<select name="categoryid" id="categoryid">';
 foreach ($categories as $category) {
-    $catList .= "<option value='$category[categoryId]'";
+    $catList .= "<option value='$category[categoryid]'";
     if(isset($categoryId)){
-        if($category['categoryId'] === $categoryId){
+        if($category['categoryid'] === $categoryId){
             $catList .= ' selected ';
         }
     }
-    $catList .= ">$category[categoryName]</option>";
+    $catList .= ">$category[categoryname]</option>";
 }
 $catList .= '</select>';
 ?>
@@ -24,7 +24,7 @@ $catList .= '</select>';
   <meta charset="utf-8">
   <title>Add Product</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" media="screen" href="http://cryptic-sands-03658.herokuapp.com/project/css/main.css">
+  <link rel="stylesheet" media="screen" href="../css/main.css">
 </head>
 
 <body>
@@ -33,7 +33,7 @@ $catList .= '</select>';
 
 <header>
 
-    <?php include 'http://cryptic-sands-03658.herokuapp.com/project/modules/header.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/project/modules/header.php'; ?>
 
 </header>
 
@@ -53,7 +53,7 @@ echo $priceMessage;
 }
 ?>
 
-<form action="http://cryptic-sands-03658.herokuapp.com/project/products/index.php" method="POST" enctype="multipart/form-data">
+<form action="../products/index.php" method="POST" enctype="multipart/form-data">
         <div>
             <label for="invName">Product Name</label>
             <input type="text" name="invName" id="invName" <?php if(isset($invName)){echo "value='$invName'";} ?> required>
@@ -64,7 +64,7 @@ echo $priceMessage;
         </div>   
         <div>
             <label for="invImage">Product Image</label>
-            <input type="text" id="invImage" name="invImage" value="http://cryptic-sands-03658.herokuapp.com/project/images/no-image.png" readonly <?php if(isset($invImage)){echo "value='$invImage'";} ?> required>
+            <input type="text" id="invImage" name="invImage" value="/project/images/no-image.png" readonly <?php if(isset($invImage)){echo "value='$invImage'";} ?> required>
         </div> 
         <div>
             <label for="invThumbnail">Product Thumbnail</label>
@@ -92,7 +92,7 @@ echo $priceMessage;
 
 <footer>
 
-    <?php include 'http://cryptic-sands-03658.herokuapp.com/project/modules/footer.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/project/modules/footer.php'; ?>
 
 </footer>
 
