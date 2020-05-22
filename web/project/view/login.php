@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>Login Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" media="screen" href="http://cryptic-sands-03658.herokuapp.com/project/css/main.css">
+  <link rel="stylesheet" media="screen" href="../css/main.css">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
 
 <header>
 
-    <?php include 'http://cryptic-sands-03658.herokuapp.com/project/modules/header.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/project/modules/header.php'; ?>
 
 </header>
 
@@ -30,7 +30,7 @@
     }
     ?>
 
-    <form action="http://cryptic-sands-03658.herokuapp.com/project/accounts/index.php" method="POST" enctype="multipart/form-data">
+    <form action="../accounts/index.php" method="POST" enctype="multipart/form-data">
         <div>
             <label for="clientEmail">Email</label>
             <input type="email" id="clientEmail" name="clientEmail" <?php if(isset($clientEmail)){echo "value='$clientEmail'";} ?> required>
@@ -46,7 +46,7 @@
         
     <p>- or -</p>
 
-    <a href="http://cryptic-sands-03658.herokuapp.com/project/accounts/index.php?action=Registration" title="Not a user?  Make an account!">Create an Account</a>
+    <a href="../accounts/index.php?action=Registration" title="Not a user?  Make an account!">Create an Account</a>
 
     </section>
 
@@ -54,7 +54,7 @@
 
 <footer>
 
-    <?php include 'http://cryptic-sands-03658.herokuapp.com/project/modules/footer.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/project/modules/footer.php'; ?>
 
 </footer>
 

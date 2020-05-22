@@ -8,18 +8,18 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
  
 
 // Get the database connection file
-require_once 'http://cryptic-sands-03658.herokuapp.com/project/library/connections.php';
+require_once '../library/connections.php';
 // Get the acme model for use as needed
-require_once 'http://cryptic-sands-03658.herokuapp.com/project/model/acme-model.php';
+require_once '../model/acme-model.php';
 // Get the accounts model for use as needed
-require_once 'http://cryptic-sands-03658.herokuapp.com/project/model/accounts-model.php';
+require_once '../model/accounts-model.php';
 // Get the functions library
-require_once 'http://cryptic-sands-03658.herokuapp.com/project/library/functions.php';
+require_once '../library/functions.php';
 // Get the reviews model
-require_once 'http://cryptic-sands-03658.herokuapp.com/project/model/reviews-model.php';
+require_once '../model/reviews-model.php';
 
 // Get the array of categories
-$categories = getCategories();
+//$categories = getCategories();
 
 //var_dump($categories);
 //exit;
@@ -34,7 +34,7 @@ $navList .= '</ul>';
 */
 
 // Create the navList using a function defined in the functions library file
-$navList = createNav($categories);
+//$navList = createNav($categories);
 
 $action = filter_input(INPUT_POST, 'action');
  if ($action == NULL){
@@ -43,10 +43,10 @@ $action = filter_input(INPUT_POST, 'action');
 
  switch ($action){
     case 'Login':
-     include ('http://cryptic-sands-03658.herokuapp.com/project/view/login.php');
+     include ('../view/login.php');
      break;
     case 'Registration':
-     include ('http://cryptic-sands-03658.herokuapp.com/project/view/registration.php');
+     include ('../view/registration.php');
      break;
     case 'register':
      // Filter and store the data
@@ -66,14 +66,14 @@ $action = filter_input(INPUT_POST, 'action');
 
       if($existingEmail){
          $message = '<p class="notice">That email address already exists. Do you want to login instead?</p>';
-         include 'http://cryptic-sands-03658.herokuapp.com/project/view/login.php';
+         include '../view/login.php';
          exit;
         }
 
       // Check for missing data
       if(empty($clientFirstName) || empty($clientLastName) || empty($clientEmail) || empty($checkPassword)){
          $message = '<p class="errorMsg">Please provide information for all empty form fields.</p>';
-         include 'http://cryptic-sands-03658.herokuapp.com/project/view/registration.php';
+         include '../view/registration.php';
          exit; 
       }
 
@@ -87,17 +87,17 @@ $action = filter_input(INPUT_POST, 'action');
       if($regOutcome === 1){
          setcookie('firstname', $clientFirstName, strtotime('+1 year'), '/');
          $message = "<p>Thanks for registering $clientFirstName. Please use your email and password to login.</p>";
-         include ('http://cryptic-sands-03658.herokuapp.com/project/view/login.php');
+         include ('../view/login.php');
          exit;
       } else {
          $message = "<p>Sorry $clientFirstName, but the registration failed. Please try again.</p>";
-         include ('http://cryptic-sands-03658.herokuapp.com/project/view/registration.php');
+         include ('../view/registration.php');
          exit;
       }
       break;
     case 'updateUser':
 
-      include 'http://cryptic-sands-03658.herokuapp.com/project/view/client-update.php';
+      include '../view/client-update.php';
 
       break;
     case 'updateUserInfo':
@@ -117,7 +117,7 @@ $action = filter_input(INPUT_POST, 'action');
       $existingEmail = checkExistingEmail($clientEmail);
       if($existingEmail){
          $message = '<p class="notice">That email address already exists. Please try a different one.</p>';
-         include 'http://cryptic-sands-03658.herokuapp.com/project/view/client-update.php';
+         include '../view/client-update.php';
          exit;
         }
       }
@@ -125,7 +125,7 @@ $action = filter_input(INPUT_POST, 'action');
       // Check for missing data
       if(empty($clientFirstName) || empty($clientLastName) || empty($clientEmail)){
          $message = '<p class="errorMsg">Please provide information for all empty form fields.</p>';
-         include 'http://cryptic-sands-03658.herokuapp.com/project/view/client-update.php';
+         include '../view/client-update.php';
          exit; 
         }
 
@@ -138,7 +138,7 @@ $action = filter_input(INPUT_POST, 'action');
       } else {
          $message = "<p>Sorry, your user info could not be updated. Please try again.</p>";
          $_SESSION['message'] = $message;
-         header('Location: http://cryptic-sands-03658.herokuapp.com/project/accounts/');
+         header('Location: ../accounts/');
       }
 
       // Get client info through the clientId and update the session
@@ -151,7 +151,7 @@ $action = filter_input(INPUT_POST, 'action');
       $_SESSION['clientData'] = $newClientData;
       // Send them to the admin view
 
-      include 'http://cryptic-sands-03658.herokuapp.com/project/view/admin.php';
+      include '../view/admin.php';
 
       break;
 
@@ -168,7 +168,7 @@ $action = filter_input(INPUT_POST, 'action');
       if(empty($checkPassword)){
          $pErrorMessage = '<p class="errorMsg">We were unable to update your password, please make sure it is to standard</p>';
          $_SESSION['pErrorMessage'] = $pErrorMessage;
-         include 'http://cryptic-sands-03658.herokuapp.com/project/view/client-update.php';
+         include '../view/client-update.php';
          exit; 
       }
 
@@ -180,11 +180,11 @@ $action = filter_input(INPUT_POST, 'action');
       if ($passUpOutCome) {
          $message = "<p>Your password has been sucessfully updated!</p>";
          $_SESSION['message'] = $message;
-         include 'http://cryptic-sands-03658.herokuapp.com/project/view/admin.php';
+         include '../view/admin.php';
       } else {
          $message = "<p>Sorry, your password could not be updated. Please try again.</p>";
          $_SESSION['message'] = $message;
-         include 'http://cryptic-sands-03658.herokuapp.com/project/view/admin.php';
+         include '../view/admin.php';
       }
 
 
@@ -204,7 +204,7 @@ $action = filter_input(INPUT_POST, 'action');
       // Check for missing data
       if(empty($clientEmail) || empty($checkPassword)){
          $message = '<p>Please provide information for all empty form fields.</p>';
-         include 'http://cryptic-sands-03658.herokuapp.com/project/view/login.php';
+         include '../view/login.php';
          exit; 
       }
 
@@ -218,7 +218,7 @@ $action = filter_input(INPUT_POST, 'action');
       // and return to the login view
       if (!$hashCheck) {
       $message = '<p class="notice">Please check your password and try again.</p>';
-      include 'http://cryptic-sands-03658.herokuapp.com/project/view/login.php';
+      include '../view/login.php';
       exit; 
       }
 
@@ -234,7 +234,7 @@ $action = filter_input(INPUT_POST, 'action');
 
       // Form text fields for the advanced users
       $advancedMessage = '<p>Use the link below to manage products</p>';
-      $advancedMessage .= '<p><a href="http://cryptic-sands-03658.herokuapp.com/project/products/">Product Management</a></p>';
+      $advancedMessage .= '<p><a href="../products/">Product Management</a></p>';
 
       $clientId = $_SESSION['clientData']['clientId'];
 
@@ -248,13 +248,13 @@ $action = filter_input(INPUT_POST, 'action');
 
       setcookie("firstname", '$_SESSION["clientData"]["clientFirstname"]', time() -360000, "/");
       
-      include 'http://cryptic-sands-03658.herokuapp.com/project/view/admin.php';
+      include '../view/admin.php';
       exit;
           
     break;
     case 'logout':
       session_destroy();
-      header("Location: http://cryptic-sands-03658.herokuapp.com/project/index.php");
+      header("Location: ../index.php");
     break;
     default:
     
@@ -265,7 +265,7 @@ $action = filter_input(INPUT_POST, 'action');
      // Take array and put it through a builder function
      $results = buildFormReviews($reviews);
 
-     include ('http://cryptic-sands-03658.herokuapp.com/project/view/admin.php');
+     include ('../view/admin.php');
    }
 
 ?>
