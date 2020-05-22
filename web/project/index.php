@@ -7,11 +7,11 @@ session_start();
 try{
     
 // Get the database connection file
-include ('/library/connections.php');
+include ('library/connections.php');
 // Get the acme model for use as needed
-include ('/model/acme-model.php');
+include ('model/acme-model.php');
 // Get the functions library
-include ('/library/functions.php');
+include ('library/functions.php');
 
     }
      catch (Exception $ex) {
@@ -37,11 +37,11 @@ if ($action == NULL) {
 
 switch ($action) {
     case 'Home':
-        include ('/view/home.php');
+        include ('view/home.php');
         break;
     
     default:
-        include ('/view/home.php');
+        include ('view/home.php');
 }
 
 ?>
