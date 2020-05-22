@@ -22,10 +22,10 @@ include ('project/library/functions.php');
 
 
 // Get the array of categories
-$categories = getCategories();
+//$categories = getCategories();
 
 // Create the navList using a function defined in the functions library file
-$navList = createNav($categories);
+//$navList = createNav($categories);
 
 // Check if the firstname cookie exists, get its value
 if (isset($_COOKIE['firstname'])) {

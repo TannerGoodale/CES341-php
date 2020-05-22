@@ -46,5 +46,5 @@
         <li><a href="/" title="Visit the acme rocket page to see all of our rockets">Rocket</a></li>
         <li><a href="/" title="Visit the acme trap page to see all of our razor sharp traps">Trap</a></li>
     </ul>-->
-    <?php echo $navList; ?>
+    <?php //echo $navList; ?>
 </nav>
