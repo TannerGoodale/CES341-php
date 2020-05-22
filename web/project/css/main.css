@@ -1,0 +1,525 @@
+html{
+    box-sizing: border-box;
+   }
+   
+   *, *:before, *:after{
+    box-sizing: inherit;
+   }
+
+body {
+    padding: 0;
+    font-family: 'Bubblegum Sans', cursive;
+    background: url(../images/site/background.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.hidden {
+    display: none;
+}
+
+.active {
+    color: #de2226;
+    background-color: #ffffff;
+}
+
+#container {
+    background-color: #ffffff;
+    padding: 3px;
+    margin-top: -8.5px;
+}
+
+.formPage {
+    max-width: 300px;
+    margin: auto;
+}
+
+.prodPage {
+    text-align: center;
+}
+
+.prodPage table {
+    margin: auto;
+    text-align: left;
+}
+
+.prodPage tr {
+    margin: 0.5em;
+}
+
+.errorMsg {
+    color: red;
+}
+
+.red {
+    color: red;
+}
+
+.welcome {
+    margin-right: 1em;
+}
+
+#productDisplayPage {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.bump-right{
+    margin-left: 2.2em;
+}
+
+.review-block{
+    background-color: lightgray;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+}
+
+.review-block .screen-name{
+    margin: 0.5em 0.5em 0.5em 2em;
+    padding-top: 1em;
+    display: inline-block;
+}
+
+.date{
+    margin: 0 0 0 2em;
+    display: inline-block;
+}
+
+.down {
+    margin-bottom: 0;
+}
+
+.downx2 {
+    margin-bottom: -1em;
+}
+
+.review-text{
+    margin: 0 1em;
+    padding: 0.5em;
+    background-color: white;
+}
+
+.review-form{
+    margin-bottom: 1em;
+}
+
+#reviewText{
+    width: 100%;
+    height: 50px;
+}
+
+.item-name{
+    display: block;
+    margin: 0 0 1em 2em;
+}
+
+.submitBtn {
+    display: block;
+    width: 20%;
+    min-width: 230px;
+    margin: auto;
+    margin-top: 1em;
+}
+
+.over-under {
+    display: flex;
+    flex-direction: column;
+}
+
+/*Custom Styles*/
+#top {
+    display: flex;
+    justify-content: space-between;
+}
+
+#logoLink {
+    width: 50%;
+}
+
+#logo {
+    width: 100%;
+}
+
+header div {
+    text-align: end;
+}
+
+header div a{
+    text-decoration: none;
+    color: #000000;
+}
+
+#accountGif {
+    /*width: 13%;*/
+    width: 2em;
+}
+
+nav {
+    display: block;
+    border: #de2226 solid 3px;
+    border-bottom: none;
+    background-color: #de2226;
+    margin-left: -3px;
+    margin-right: -3px;
+}
+
+nav a:hover {
+    color: #de2226;
+    background-color: #ffffff;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    vertical-align: super;
+    padding-top: 1em;
+    margin-top: -1em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul li {
+    padding-top: 1em;
+    margin-top: -1em;
+}
+
+nav ul li:hover {
+    background-color: #ffffff;
+}
+
+main section img {
+    display: block;
+    width: 100%;
+}
+
+.hero{
+    position: relative;
+    text-align: center;
+}
+
+.center-right {
+    position: absolute;
+    top: -2px;
+    right: 0px;
+    width: 50%;
+    font-size: 75%;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.hero ul {
+    padding: 3%;
+    list-style: none;
+    text-align: start;
+    color: #de2226;
+}
+
+.hero ul li h2 {
+    margin: 0;
+}
+
+#recipes{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+}
+
+.grid-item{
+    background-color: rgba(128, 128, 128, 0.5);
+    border: #ffffff solid 1px;
+}
+
+#recipes div img {
+    width: 60%;
+    margin: auto;
+}
+
+#recipes div span {
+    display: block;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+#recipes div a {
+    font-size: 85%;
+    background-color: #ffffff;
+}
+
+footer {
+    margin-top: 1em;
+    border-top: black solid 3px;
+    text-align: center;
+}
+
+/*Product Display Styles*/
+
+#prod-display{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+   }
+   
+   #prod-display li{
+    margin-bottom: .5em;
+    border: 1px #ccc solid;
+    list-style-type: none;
+    flex: 1 1 auto;
+    width: 300px;
+    text-align: center;
+    margin: auto;
+   }
+                   
+   #prod-display li img{
+    width: 100%;
+    height: 200px;
+   }
+
+   #tnImage-display{
+       display: flex;
+       list-style: none;
+   }
+
+   #tnImage-display li{
+       border-style: solid;
+       border-color: black;
+       margin-right: 3px;
+   }
+
+/*Form Styles*/
+
+label {
+    display: block;
+    text-align: left;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    font-size: 2em;
+}
+
+form .button {
+    font-size: 1.5em;
+    padding: 0.5em;
+    width: 100%;
+    margin: 1em 0 0;
+}
+
+.formPage a {
+    font-size: 1.5em;
+    background-color: red;
+    text-decoration: none;
+    color: white;
+    padding: 0.5em;
+    display: block;
+}
+
+.formPage section {
+    text-align: center;
+}
+
+.formPage h3 {
+    font-size: 1.5em;
+}
+
+form select {
+    display: block;
+    text-align: left;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+form div span {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: -0.5em;
+    font-size: 12px;
+    background-color: lightgray;
+}
+
+
+
+
+
+@media only screen and (min-width: 331px) {
+    
+    .center-right {
+        height: 100%;
+        padding-bottom: 2px;
+    }
+    
+    .hero ul {
+        margin: auto;
+        margin-top: 10%;
+    }
+    
+}
+
+@media only screen and (min-width: 425px) {
+    
+    nav ul {
+        justify-content: flex-start;
+    }
+    
+    nav a {
+        padding: 0.5em;
+        padding-top: 1em;
+        padding-bottom: 0.5em;
+    }
+    
+    .center-right {
+        font-size: 100%;
+    }
+    
+}
+
+@media only screen and (min-width: 600px) {
+    
+    #fr {
+        max-width: 40%;
+    }
+    
+    .hero-reviews {
+        max-width: 60%;
+        float: right;
+    }
+    
+    .grid-item {
+        background-color: #ffffff;
+        margin: 0.3em;
+    }
+    
+    .backgrounded {
+        background-color: rgba(128, 128, 128, 0.5);
+    }
+    
+    #recipes div span {
+        font-size: 1em;
+    }
+    
+    #logo {
+        width: 50%;
+    }
+    
+    #logoLink {
+        text-align: left;
+    }
+    
+    .center-right {
+        background: none;
+        width: 40%;
+    }
+    
+    .center-right ul {
+        max-width: 300px;
+    }
+    
+    .hero ul {
+        font-size: 1.3em;
+    }
+    
+    nav {
+        font-size: 1.3em;
+    }
+    
+}
+
+@media only screen and (min-width: 768px) {
+        #prod-display{
+        flex-flow: row wrap;
+        justify-content: flex-start;
+       }
+       
+       #prod-display li{
+        max-width: 200px;
+        flex: 1 0 auto;
+        text-align: center;
+        max-height: 400px;
+        width: auto;
+        text-align: center;
+        margin: 0 0 0.5em 0;
+       }
+
+       #productDisplayPage{
+           flex-direction: row;
+       }
+
+       #productDisplayPage img{
+           width: 100%;
+       }
+
+       .prodInfo{
+           margin: 5em 0 0 1em;
+           max-width: 60%;
+       }
+
+       .submitBtn {
+        display: inline-block;
+    }
+       
+}
+
+@media only screen and (min-width: 835px) {
+    
+    .hero-reviews {
+        padding: 5%;
+    }
+    
+    #fr {
+        padding: 5%;
+    }
+    
+    h1 {
+        font-size: 2.5em;
+    }
+    
+    #container {
+        width: 80%;
+        margin: auto;
+        margin-top: -9px;
+    }
+    
+    /*Form Styles Desktop*/
+    
+    label {
+    font-size: 1em;
+    margin-top: 0.5em;
+    }
+
+    input {
+        font-size: 1em;
+    }
+
+    form .button {
+        font-size: 1em;
+    }
+
+    .formPage a {
+        font-size: 1em;
+    }
+
+    .formPage h3 {
+        font-size: 1em;
+    }
+
+    form select {
+        font-size: 1em;
+    }
+
+    .submitBtn {
+        display: inline-block;
+        width: 20%;
+        min-width: 145px;
+    }
+    
+}
