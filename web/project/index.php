@@ -7,11 +7,11 @@
 session_start();
 
 // Get the database connection file
-require_once 'http://cryptic-sands-03658.herokuapp.com/project/library/connections.php';
+require_once 'project/library/connections.php';
 // Get the acme model for use as needed
-require_once 'http://cryptic-sands-03658.herokuapp.com/project/model/acme-model.php';
+require_once 'project/model/acme-model.php';
 // Get the functions library
-require_once 'http://cryptic-sands-03658.herokuapp.com/project/library/functions.php';
+require_once 'project/library/functions.php';
 
 
 // Get the array of categories
@@ -32,11 +32,11 @@ if ($action == NULL) {
 
 switch ($action) {
     case 'Home':
-        include 'http://cryptic-sands-03658.herokuapp.com/project/view/home.php';
+        include 'project/view/home.php';
         break;
     
     default:
-        include 'http://cryptic-sands-03658.herokuapp.com/project/acme/view/home.php';
+        include 'project/view/home.php';
 }
 
 ?>
