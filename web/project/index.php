@@ -7,11 +7,11 @@ session_start();
 try{
     
 // Get the database connection file
-include ('library/connections.php');
+require_once ('library/connections.php');
 // Get the acme model for use as needed
-include ('model/acme-model.php');
+require_once ('model/acme-model.php');
 // Get the functions library
-include ('library/functions.php');
+require_once ('library/functions.php');
 
     }
      catch (Exception $ex) {
