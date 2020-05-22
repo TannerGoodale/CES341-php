@@ -7,11 +7,11 @@
 session_start();
 
 // Get the database connection file
-require 'project/library/connections.php';
+include ('/project/library/connections.php');
 // Get the acme model for use as needed
-require 'project/model/acme-model.php';
+include ('/project/model/acme-model.php');
 // Get the functions library
-require 'project/library/functions.php';
+include ('/project/library/functions.php');
 
 
 // Get the array of categories
