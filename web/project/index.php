@@ -6,12 +6,19 @@
 // Create or access a Session 
 session_start();
 
+try{
+    
 // Get the database connection file
 include ('project/library/connections.php');
 // Get the acme model for use as needed
 include ('project/model/acme-model.php');
 // Get the functions library
 include ('project/library/functions.php');
+
+    }
+     catch (Exception $ex) {
+        echo "ERROR: $ex";
+    }
 
 
 // Get the array of categories
