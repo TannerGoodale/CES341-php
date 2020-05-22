@@ -19,7 +19,7 @@ require_once '../library/functions.php';
 require_once '../model/reviews-model.php';
 
 // Get the array of categories
-//$categories = getCategories();
+$categories = getCategories();
 
 //var_dump($categories);
 //exit;
@@ -34,7 +34,7 @@ $navList .= '</ul>';
 */
 
 // Create the navList using a function defined in the functions library file
-//$navList = createNav($categories);
+$navList = createNav($categories);
 
 $action = filter_input(INPUT_POST, 'action');
  if ($action == NULL){

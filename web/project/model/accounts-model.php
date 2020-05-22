@@ -38,7 +38,7 @@ function checkExistingEmail($clientEmail)
                 $db   = steeptConnect();
                 // Prepare the SQL statment
                 $sql  = 'SELECT clientemail FROM clients WHERE clientemail = :email';
-                $stmt = $db->prepare($sql);
+                $stmt = $db->prepare('SELECT clientemail FROM clients WHERE clientemail = :email');
                 // Connect ':email" to the parameter "$clientEmail"
                 $stmt->bindValue(':email', $clientEmail, PDO::PARAM_STR);
                 // Execute the statment
