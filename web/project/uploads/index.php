@@ -24,7 +24,7 @@ $navList = createNav($categories);
 // directory name where uploaded images are stored
 $image_dir = '/project/images/products';
 // The path is the full path from the server root
-$image_dir_path = $image_dir;
+$image_dir_path = $_SERVER['DOCUMENT_ROOT'].$image_dir;
 
 // Grab the 'action' name and it's value from the url
 $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);

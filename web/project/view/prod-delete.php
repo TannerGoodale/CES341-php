@@ -28,8 +28,8 @@ if(!$_SESSION['loggedin'] || $_SESSION['clientData']['clientlevel'] == 1){
 
 <main class="formPage">
 
-<h3><?php if(isset($prodInfo['invName'])){ 
-       echo "Delete $prodInfo[invName] ";} 
+<h3><?php if(isset($prodInfo['invname'])){ 
+       echo "Delete $prodInfo[invname] ";} 
        elseif(isset($invName)) { echo $invName; }?></h3>
 
 <p>Confirm Product Deletion. The delete is permanent.</p>
@@ -44,14 +44,14 @@ if (isset($message)) {
         <div>
             <label for="invName">Product Name</label>
             <input type="text" name="invName" id="invName" <?php if(isset($invName)){ echo "value='$invName'"; } 
-            elseif(isset($prodInfo['invName'])) {
-            echo "value='$prodInfo[invName]'"; }?> required>
+            elseif(isset($prodInfo['invname'])) {
+            echo "value='$prodInfo[invname]'"; }?> required>
         </div>        
         <div>
             <label for="invDescription">Product Discription</label>
             <input type="text" name="invDescription" id="invDescription" <?php if(isset($invDescription)){echo "value='$invDescription'";}
-            elseif(isset($prodInfo['invDescription'])) {
-            echo "value='$prodInfo[invDescription]'"; } ?> required>
+            elseif(isset($prodInfo['invdescription'])) {
+            echo "value='$prodInfo[invdescription]'"; } ?> required>
         </div>   
         <input type="submit" name="submit" id="prodbtn" class="button" value="Delete Product">
         <!-- Add the action name - value pair -->

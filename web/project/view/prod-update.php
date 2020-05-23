@@ -30,7 +30,7 @@ $catList .= '</select>';
   <title><?php if(isset($prodInfo['invname'])){ 
        echo "Modify $prodInfo[invname] ";} 
        elseif(isset($invName)) { echo $invName; }?> 
-       | Acme, Inc</title>
+       | SteeptClub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" media="screen" href="/project/css/main.css">
 </head>
@@ -76,18 +76,6 @@ echo $priceMessage;
             elseif(isset($prodInfo['invdescription'])) {
             echo "value='$prodInfo[invdescription]'"; } ?> required>
         </div>   
-        <div>
-            <label for="invImage">Product Image</label>
-            <input type="text" id="invImage" name="invImage" value="/project/images/no-image.png" readonly <?php if(isset($invImage)){echo "value='$invImage'";} 
-            elseif(isset($prodInfo['invimage'])) {
-            echo "value='$prodInfo[invimage]'"; }?> required>
-        </div> 
-        <div>
-            <label for="invThumbnail">Product Thumbnail</label>
-            <input type="Text" name="invThumbnail" id="invThumbnail" <?php if(isset($invThumbnail)){echo "value='$invThumbnail'";} 
-            elseif(isset($prodInfo['invthumbnail'])) {
-            echo "value='$prodInfo[invthumbnail]'"; }?> required>
-        </div>
         <div>
             <label for="invPrice">Product Price (Up to 10 digets and 2 decimal places)</label>
             <input type="Text" name="invPrice" id="invPrice" placeholder="9.99" pattern="\d+(\.\d{2})?" <?php if(isset($invPrice) && $checkedPrice == 1){echo "value='$invPrice'";}
