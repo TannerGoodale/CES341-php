@@ -8,8 +8,8 @@ html{
 
 body {
     padding: 0;
-    font-family: 'Sans-serif', cursive;
-    background: lightcoral;
+    background: rgba(231, 78, 78, 0.685);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .hidden {
