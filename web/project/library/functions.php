@@ -28,7 +28,7 @@ function checkPrice($invPrice){
     $navList = '<ul>';
     $navList .= "<li><a href='/project/index.php' title='Go to SteeptClub home page'>Home</a></li>";
     foreach ($categories as $category) {
-    $navList .= "<li><a href='/project/products/?action=category&categoryName=".urlencode($category['categoryname'])."' title='View our $category[categoryname] product line'>$category[categoryname]</a></li>";
+    $navList .= "<li><a href='/project/products/?action=category&categoryName=".urlencode($category['categoryname'])."' title='View our $category[categoryname] blends'>$category[categoryname]</a></li>";
     }
     $navList .= '</ul>';
     return $navList;

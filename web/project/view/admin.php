@@ -45,7 +45,7 @@ if (isset($_SESSION['reviewMessage'])){
     <p>You are logged in</p>
 
     <ul>
-        <li>First Name: <?php echo $_SESSION['clientData']['clienttirstname'];?></li>
+        <li>First Name: <?php echo $_SESSION['clientData']['clientfirstname'];?></li>
         <li>Last Name: <?php echo $_SESSION['clientData']['clientlastname'];?></li>
         <li>Client Email: <?php echo $_SESSION['clientData']['clientemail'];?></li>
     </ul>
