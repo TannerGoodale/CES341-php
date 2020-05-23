@@ -8,12 +8,8 @@ html{
 
 body {
     padding: 0;
-    font-family: 'Bubblegum Sans', cursive;
-    background: url(../images/site/background.jpg) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    font-family: 'Sans-serif', cursive;
+    background: lightskyblue;
 }
 
 .hidden {
