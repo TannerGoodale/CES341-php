@@ -186,13 +186,13 @@ switch ($action)
         {
             $message             = "<p>The product has been sucessfully updated!</p>";
             $_SESSION['message'] = $message;
-            header('location: ../project/products/');
+            header('location: ../products/');
             exit;
         }
         else
         {
             $message = "<p>Sorry, the product could not be updated. Please try again.</p>";
-            include('../project/view/prod-update.php');
+            include('../view/prod-update.php');
             exit;
         }
         break;
@@ -208,14 +208,14 @@ switch ($action)
         {
             $message             = "<p class='notice'>Congratulations, $invName was successfully deleted.</p>";
             $_SESSION['message'] = $message;
-            header('location: ../project/products/');
+            header('location: ../products/');
             exit;
         }
         else
         {
             $message             = "<p class='notice'>Error: $invName was not deleted.</p>";
             $_SESSION['message'] = $message;
-            header('location: ../project/products/');
+            header('location: ../products/');
             exit;
         }
         
@@ -325,7 +325,7 @@ switch ($action)
             $preReviewCheck = "<p class='bump-right'>Please <a href='../accounts/index.php?action=Login'>log in</a> if you want to write a review.</p>";
         }
 
-        include '../project/view/product-detail.php';
+        include '../view/product-detail.php';
         
         break;
     
@@ -333,7 +333,7 @@ switch ($action)
         $categoryList = buildCategoryList($categories);
         
         
-        include('../project/view/product-management.php');
+        include('../view/product-management.php');
         break;
 }
 
