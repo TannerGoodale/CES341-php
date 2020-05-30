@@ -5,7 +5,7 @@
 // Insert a review
 function addReview($reviewText, $invId, $clientId) {
     $db = steeptConnect();
-    $sql = 'INSERT INTO reviews (reviewtext, invid, clientid) VALUES (:reviewtext, :invid, :clientid)';
+    $sql = 'INSERT INTO reviews (reviewtext, invid, reviewdate, clientid) VALUES (:reviewtext, :invid, CURRENT_TIMESTAMP, :clientid)';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':reviewtext', $reviewText, PDO::PARAM_STR);
     $stmt->bindValue(':invid', $invId, PDO::PARAM_INT);
