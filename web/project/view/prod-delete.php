@@ -11,7 +11,7 @@ if(!$_SESSION['loggedin'] || $_SESSION['clientData']['clientlevel'] == 1){
   <title><?php if(isset($prodInfo['invname'])){ 
        echo "Delete $prodInfo[invname] ";} 
        elseif(isset($invName)) { echo $invName; }?> 
-       | Acme, Inc</title>
+       | SteeptClub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" media="screen" href="/project/css/main.css">
 </head>

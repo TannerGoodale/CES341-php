@@ -8,7 +8,7 @@ if (isset($_SESSION['message'])) {
 
 <head>
   <meta charset="utf-8">
-  <title><?php if(isset($prodName)){echo $prodName;}?> | Acme, Inc</title>
+  <title><?php if(isset($prodName)){echo $prodName;}?> | SteeptClub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" media="screen" href="/project/css/main.css">
 </head>

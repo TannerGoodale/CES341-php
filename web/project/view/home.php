@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Acme Home Page</title>
+  <title>SteeptClub Home Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" media="screen" href="css/main.css">
 </head>

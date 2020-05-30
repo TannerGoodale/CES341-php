@@ -24,6 +24,7 @@
                     <ul>
                         <li><a href="../misc/week03/teamactivity03-controller.php">Team Activity Week 03</a></li>
                         <li><a herf="http://cryptic-sands-03658.herokuapp.com/proves/week03/">Shopping Cart (Rough and incompleate)</a></li>
+                        <li><a href="project/">PHP Project</a></li>
                     </ul>
                 </div>
             </section>

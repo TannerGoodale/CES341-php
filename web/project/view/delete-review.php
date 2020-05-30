@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Template</title>
+  <title>Delete Review</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" media="screen" href="/project/css/main.css">
 </head>
