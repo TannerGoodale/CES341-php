@@ -233,7 +233,7 @@ switch ($action)
         {
             $prodDisplay = buildProductsDisplay($products);
         }
-        include '../project/view/category.php';
+        include '../view/category.php';
         
         break;
     

@@ -142,7 +142,7 @@ function deleteProduct($invId)
 function getProductsByCategoryName($categoryName)
 {
                 $db   = steeptConnect();
-                $sql  = 'SELECT * FROM inventory WHERE categoryid IN (SELECT categoryid FROM categories WHERE categoryname = :categoryname)';
+                $sql  = 'SELECT * FROM inventory WHERE categoryid = (SELECT categoryid FROM categories WHERE categoryname = :categoryname)';
                 $stmt = $db->prepare($sql);
                 $stmt->bindValue(':categoryname', $categoryName, PDO::PARAM_STR);
                 $stmt->execute();
