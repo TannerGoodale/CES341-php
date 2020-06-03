@@ -76,7 +76,7 @@ function updateReview($reviewText, $reviewId) {
      $db = steeptConnect();
      $sql = 'UPDATE reviews SET reviewText = :reviewText WHERE reviewId = :reviewId';
      $stmt = $db->prepare($sql);
-     $stmt->bindValue(':reviewtext', $reviewText, PDO::PARAM_STR);
+     $stmt->bindValue(':reviewText', $reviewText, PDO::PARAM_STR);
      $stmt->bindValue(':reviewid', $reviewId, PDO::PARAM_INT);
      $stmt->execute();
      $rowsChanged = $stmt->rowCount();
