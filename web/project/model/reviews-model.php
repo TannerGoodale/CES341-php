@@ -74,10 +74,10 @@ function checkReviewStatus($invId, $clientId) {
 // Update a specific review
 function updateReview($reviewText, $reviewId) {
      $db = steeptConnect();
-     $sql = 'UPDATE reviews SET reviewText = :reviewText WHERE reviewId = :reviewId';
+     $sql = 'UPDATE reviews SET reviewtext = :reviewText WHERE reviewid = :reviewId';
      $stmt = $db->prepare($sql);
      $stmt->bindValue(':reviewText', $reviewText, PDO::PARAM_STR);
-     $stmt->bindValue(':reviewid', $reviewId, PDO::PARAM_INT);
+     $stmt->bindValue(':reviewId', $reviewId, PDO::PARAM_INT);
      $stmt->execute();
      $rowsChanged = $stmt->rowCount();
      $stmt->closeCursor();
