@@ -1,7 +1,7 @@
 <!-- Section for the header and navigation, dynamic php page section. -->
 <div id="top">
     <a id="logoLink" href="/project/" title="The Home page for SteeptClub.com, the home of Primuim Herbal Teas.">
-        <img id="logo" src="/project/images/site/logo.gif" alt="Logo for SteeptClub.com, the home of Primuim Herbal Teas.">
+        <img id="logo" src="/project/images/site/SpringLogo.png" alt="Logo for SteeptClub.com, the home of Primuim Herbal Teas.">
     </a>
 
     <div class='over-under'>
@@ -17,7 +17,7 @@
         <?php
         if($_SESSION){
             if(!$_SESSION['loggedin']){
-            echo'<a href="/project/accounts/index.php?action=Login" title="Account portal, log into your SteeptClub account"><img id="accountGif" src="http://cryptic-sands-03658.herokuapp.com/project/images/site/account.gif" alt="Account folder icon">
+            echo'<a href="/project/accounts/index.php?action=Login" title="Account portal, log into your SteeptClub account"><img id="accountGif" src="http://cryptic-sands-03658.herokuapp.com/project/images/site/leaf.png" alt="Account icon">
                 <span>My Account</span>
                 </a>';
             }
@@ -27,7 +27,7 @@
                 </a>';
             }
         }else{
-            echo'<a href="/project/accounts/index.php?action=Login" title="Account portal, log into your acme account"><img id="accountGif" src="http://cryptic-sands-03658.herokuapp.com/project/images/site/account.gif" alt="Account folder icon">
+            echo'<a href="/project/accounts/index.php?action=Login" title="Account portal, log into your SteeptClub account"><img id="accountGif" src="http://cryptic-sands-03658.herokuapp.com/project/images/site/leaf.png" alt="Account icon">
                 <span>My Account</span>
                 </a>';
         }
