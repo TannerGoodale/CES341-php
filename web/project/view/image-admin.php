@@ -38,12 +38,15 @@ if (isset($_SESSION['message'])) {
     ?>
 
     <form action="/project/uploads/" method="post" enctype="multipart/form-data">
-        <label for="invItem">Product</label><br>
+        <label for="invItem">Product:</label><br>
         <?php echo $prodSelect; ?><br><br>
         <label>Upload Image:</label><br>
         <input type="file" name="file1"><br>
         <input type="submit" class="regbtn" value="Upload">
         <input type="hidden" name="action" value="upload">
+
+        <h2>WARNING! FEATURE FAILS ON HEROKU SERVER, THIS IS NON-FUNCTIONAL!</h2>
+
     </form>
 
     <hr>

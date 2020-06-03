@@ -64,11 +64,15 @@ echo $priceMessage;
         </div>   
         <div>
             <label for="invImage">Product Image</label>
-            <input type="text" id="invImage" name="invImage" value="/project/images/no-image.png" readonly <?php if(isset($invImage)){echo "value='$invImage'";} ?> required>
+            <input type="text" id="invImage" name="invImage" value="/project/images/no-image.png" <?php if(isset($invImage)){echo "value='$invImage'";} ?> required>
+            <h3>THIS FEATURE CAN NOT BE FULLY SUPPORTED THROUGHT HEROKU SERVER, AS IT REQUIRES FILE MODIFCATION.  IMAGES WILL HAVE TO BE MANUALLY ADDED VIA SQL TO THE DATABASE.<br>
+            IMAGE FILES MUST BE IMPORTED TO THE WEB FOLDER MANUALLY.  THE CORRISPONDING LINK MUST BE PROVIDED.</h3>
         </div> 
         <div>
             <label for="invThumbnail">Product Thumbnail</label>
             <input type="Text" name="invThumbnail" id="invThumbnail" <?php if(isset($invThumbnail)){echo "value='$invThumbnail'";} ?> required>
+            <h3>THIS FEATURE CAN NOT BE FULLY SUPPORTED THROUGHT HEROKU SERVER, AS IT REQUIRES FILE MODIFCATION.  IMAGES WILL HAVE TO BE MANUALLY ADDED VIA SQL TO THE DATABASE.<br>
+            IMAGE FILES MUST BE IMPORTED TO THE WEB FOLDER MANUALLY.  THE CORRISPONDING LINK MUST BE PROVIDED.</h3>
         </div>
         <div>
             <label for="invPrice">Product Price (Up to 10 digets and 2 decimal places)</label>

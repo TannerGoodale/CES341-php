@@ -41,7 +41,8 @@ if (isset($_SESSION['message'])) {
 
     <h3 class="bump-right">Product thumbnails</h3>
 
-    <?php echo $tnDisplay;?>
+    <?php echo $tnDisplay;
+    //This is disabled as image handeling can not be prformed on the heroku server.?>
 
     <hr>
 

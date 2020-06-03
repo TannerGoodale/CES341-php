@@ -257,7 +257,7 @@ switch ($action)
         }
 
         $productInfo = getProductInfoById($invId);
-        $tnImageInfo = getTnInfo($invId);
+        $tnImageInfo = getTnInfoAlt($invId);
         $reviews = getItemReviews($invId);
 
         if (isset($clientFirstname) && isset($clientLastname)){
@@ -279,16 +279,7 @@ switch ($action)
 
         if (!count($tnImageInfo))
         {
-            $tnImageInfo = getTnInfoAlt($invId);
-            if (!count($tnImageInfo))
-            {
-                $message = "<p>No thumb nail pictures could be found.</p>";
-                break;
-            }
-            else
-            {
-                $tnDisplay = buildTnDisplay($tnImageInfo);
-            }
+            $message = "<p>No thumb nail pictures could be found.</p>";
         }
         else
         {
