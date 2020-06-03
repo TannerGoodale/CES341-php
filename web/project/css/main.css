@@ -155,15 +155,15 @@ header div a{
 
 nav {
     display: block;
-    border: #de2226 solid 3px;
+    border: #139c25 solid 3px;
     border-bottom: none;
-    background-color: #de2226;
+    background-color: #139c25;
     margin-left: -3px;
     margin-right: -3px;
 }
 
 nav a:hover {
-    color: #de2226;
+    color: #4ddf60;
     background-color: #ffffff;
 }
 
@@ -214,7 +214,7 @@ main section img {
     padding: 3%;
     list-style: none;
     text-align: start;
-    color: #de2226;
+    color: #139c25;
 }
 
 .hero ul li h2 {
