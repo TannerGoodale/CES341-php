@@ -42,6 +42,8 @@ case 'upload':
 
 // Store the incoming product id
 $invId = filter_input(INPUT_POST, 'invId', FILTER_VALIDATE_INT);
+echo $invId;
+exit;
 // Store the name of the uploaded image
 $imgName = $_FILES['file1']['name'];
      
