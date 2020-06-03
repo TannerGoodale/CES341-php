@@ -33,10 +33,10 @@ function buildProductList(data) {
     dataTable += '<tbody>'; 
     // Iterate over all products and put each in a row 
     data.forEach(function (element) { 
-     console.log(element.invid + ", " + element.invname); 
-     dataTable += `<tr><td>${element.invname}</td>`; 
-     dataTable += `<td><a href='/project/products?action=mod&id=${element.invid}' title='Click to modify'>Modify</a></td>`; 
-     dataTable += `<td><a href='/project/products?action=del&id=${element.invid}' title='Click to delete'>Delete</a></td></tr>`; 
+     console.log(element.invId + ", " + element.invName); 
+     dataTable += `<tr><td>${element.invName}</td>`; 
+     dataTable += `<td><a href='/project/products?action=mod&id=${element.invId}' title='Click to modify'>Modify</a></td>`; 
+     dataTable += `<td><a href='/project/products?action=del&id=${element.invId}' title='Click to delete'>Delete</a></td></tr>`; 
     }) 
     dataTable += '</tbody>'; 
     // Display the contents in the Product Management view 
