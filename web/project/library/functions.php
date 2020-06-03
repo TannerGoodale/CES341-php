@@ -242,7 +242,7 @@ function buildTnDisplay($tnImageInfo){
     $id = '<ul id="tnImage-display">';
     foreach ($tnImageInfo as $tnImage) {
      $id .= '<li>';
-     $id .= "<img src='$tnImage[imgpath]' title='$tnImage[imgname] image on SteeptClub.com' alt='$tnImage[imgname] image on SteeptClub.com'>";
+     $id .= "<img src='$tnImage[invthumbnail]' title='Image on SteeptClub.com' alt='Image on SteeptClub.com'>";
      $id .= '</li>';
     }
     $id .= '</ul>';
