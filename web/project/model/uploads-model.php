@@ -74,3 +74,14 @@ function getTnInfo($invId){
     $stmt->closeCursor();
     return $result;
 }
+
+function getTnInfoAlt($invId){
+    $db = steeptConnect();
+    $sql = "SELECT invthumbnail FROM inventory WHERE invid = :invid";
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':invid', $invId, PDO::PARAM_INT);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $result;
+}

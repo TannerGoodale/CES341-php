@@ -279,7 +279,16 @@ switch ($action)
 
         if (!count($tnImageInfo))
         {
-            $message = "<p>No thumb nail pictures could be found.</p>";
+            $tnImageInfo = getTnInfoAlt($invId);
+            if (!count($tnImageInfo))
+            {
+                $message = "<p>No thumb nail pictures could be found.</p>";
+                break;
+            }
+            else
+            {
+                $tnDisplay = buildTnDisplay($tnImageInfo);
+            }
         }
         else
         {

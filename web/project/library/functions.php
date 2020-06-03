@@ -39,7 +39,7 @@ function buildCategoryList($categories){
     $catList = '<select name="categoryId" id="categoryList">'; 
     $catList .= "<option>Choose a Category</option>"; 
     foreach ($categories as $category) { 
-     $catList .= "<option value='$category[categoryid]'>$category[categoryname]</option>"; 
+     $catList .= "<option value='$category[categoryId]'>$category[categoryName]</option>"; 
     } 
     $catList .= '</select>'; 
     return $catList; 
