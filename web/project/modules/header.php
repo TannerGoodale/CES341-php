@@ -9,7 +9,9 @@
         if($_SESSION){
             if($_SESSION['loggedin']){
                 $userFirstName = $_SESSION['clientData']['clientfirstname'];
+                echo "<div class='container'>";
                 echo "<a href='/project/accounts/index.php'><span class='welcome'>Welcome $userFirstName</span></a>";
+                echo "</div>";
             }
         }
         ?>

@@ -132,12 +132,12 @@ body {
 }
 
 #logoLink {
-    width: 50%;
+    width: 25%;
 }
 
-#logo {
-    width: 100%;
-}
+/* #logo {
+    width: 50%;
+} */
 
 header div {
     text-align: end;

@@ -20,7 +20,7 @@
     </a>
 
     <div>
-        <a href="/project/accounts/index.php" action="Login" method="GET" title="Account portal, log into your acme account"><img id="accountGif" src="http://cryptic-sands-03658.herokuapp.com/project/images/site/account.gif" alt="Account folder icon">
+        <a href="/project/accounts/index.php" action="Login" method="GET" title="Account portal, log into your SteeptClub account"><img id="accountGif" src="http://cryptic-sands-03658.herokuapp.com/project/images/site/leaf.png" alt="Account icon">
         <span>My Account</span> </a>
   </div>
     
