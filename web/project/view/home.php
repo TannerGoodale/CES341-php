@@ -18,7 +18,7 @@
 
 </header>
 
-<main class="center">
+<main style="text-align: center">
 
     <section>
         <h1>Welcome to SteeptClub</h1>
@@ -27,9 +27,9 @@
             Family owned and operated, we started SteeptClub in 2019 as a way to share one of our many passions, top quality herbal tea.
         <p>
 
-        <section class="center">
+        <section>
             <h3>Our Favorates for the Season</h3>
-            <ul id="prod-display">
+            <ul id="prod-display" style="justify-content: center;">
                 <li>
                 <a href='products/index.php?action=getProdInfo&invId=6'><img src='/project/images/products/sweet-spring-herbal-tea-tn.jpg' alt='Image of Sweet Spring Blend on SteeptClub.com'></a>
                 <hr>
