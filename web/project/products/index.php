@@ -301,7 +301,7 @@ switch ($action)
             }elseif($reviewed){
                 // var_dump($reviewCheck);
                 // exit;
-                $preReviewCheck = "<p class='bump-right'>You have already reviewed this product.  Click <a href='../reviews/index.php?action=editReviewView&reviewId=$reviewCheck[reviewId]'>here</a> to edit it.</p>";
+                $preReviewCheck = "<p class='bump-right'>You have already reviewed this product.  Click <a href='../reviews/index.php?action=editReviewView&reviewId=$reviewCheck[reviewid]'>here</a> to edit it.</p>";
             }else{
                 //Build a dynamic drop-down select list
                 $reviewForm = "<p class='downx2'>Write a review for this product</p>";
