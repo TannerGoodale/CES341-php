@@ -1,19 +1,19 @@
 #Steept Club Database Format;
 
-DROP TABLE IF EXISTS inventory;
+DROP TABLE IF EXISTS inventory CASCADE;
 CREATE TABLE inventory (
   invId SERIAL PRIMARY KEY,
   invName varchar(50) NOT NULL DEFAULT '',
   invDescription text NOT NULL,
-  invImage varchar(50) NOT NULL DEFAULT '',
-  invThumbnail varchar(50) NOT NULL DEFAULT '',
+  invimage text NOT NULL,
+  invthumbnail text NOT NULL,
   invPrice decimal(10,2) NOT NULL DEFAULT '0.00',
   invStock int NOT NULL DEFAULT '0',
   categoryId int NOT NULL,
   UNIQUE (invId, invName)
 );
 
-DROP TABLE IF EXISTS categories;
+DROP TABLE IF EXISTS categories CASCADE;
 CREATE TABLE categories (
   categoryId SERIAL PRIMARY KEY,
   categoryName varchar(30) NOT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE categories (
 DROP TYPE IF EXISTS enum CASCADE;
 CREATE TYPE enum AS ENUM ('1', '2', '3');
 
-DROP TABLE IF EXISTS clients;
+DROP TABLE IF EXISTS clients CASCADE;
  CREATE TABLE clients (
   clientId SERIAL PRIMARY KEY,
   clientFirstname varchar(15) NOT NULL,
@@ -34,17 +34,17 @@ DROP TABLE IF EXISTS clients;
   UNIQUE (clientId, clientEmail)
 );
 
-DROP TABLE IF EXISTS reviews;
+DROP TABLE IF EXISTS reviews CASCADE;
  CREATE TABLE reviews (
   reviewId SERIAL PRIMARY KEY,
   reviewText TEXT NOT NULL,
-  reviewDate TIME WITH TIME ZONE NOT NULL,
+  reviewDate TIME WITH TIME ZONE,
   invId int REFERENCES inventory (invId),
   clientId int REFERENCES clients (clientId),
   UNIQUE (reviewId)
 );
 
-DROP TABLE IF EXISTS orders;
+DROP TABLE IF EXISTS orders CASCADE;
  CREATE TABLE orders (
   orderId SERIAL PRIMARY KEY,
   orderText TEXT NOT NULL,
@@ -53,8 +53,69 @@ DROP TABLE IF EXISTS orders;
   UNIQUE (orderId)
 );
 
-ALTER TABLE inventory
-ADD CONSTRAINT constraint_fk
-FOREIGN KEY (categoryId)
-REFERENCES categories(categoryId);
+DROP TABLE IF EXISTS images CASCADE;
+CREATE TABLE images (
+imgid SERIAL PRIMARY KEY,
+invid int REFERENCES inventory (invid),
+imgname varchar(50) NOT NULL,
+imgpath TEXT NOT NULL,
+imgdate TIME WITH TIME ZONE NOT NULL,
+UNIQUE (imgid)
+);
 
+INSERT INTO categories (categoryname) VALUES ('Seasonal Blends');
+INSERT INTO categories (categoryname) VALUES ('Rooibos Blends');
+INSERT INTO categories (categoryname) VALUES ('Fruity Blends');
+
+INSERT INTO inventory (invname, invdescription, invimage, invthumbnail, invprice, invstock, categoryid) VALUES
+('African Delight', 'This delightful herbal combines the sweet flavor of 100% Organic South African Honeybush with the tartness of 100% Organic Egyptian Hibiscus.',
+'/project/images/products/african-delight-loose-leaf-tea.jpg', '/project/images/products/african-delight-loose-leaf-tea-tn.jpg', 4.00, 50, 2);
+
+INSERT INTO inventory (invname, invdescription, invimage, invthumbnail, invprice, invstock, categoryid) VALUES
+('Apple Blend', 'Our Apple Herbal is a delicious blend of natural fruits that brews up a mouthwatering cup of herbal Tea.',
+'/project/images/products/apple-loose-leaf-tea.jpg', '/project/images/products/apple-loose-leaf-tea-tn.jpg', 4.00, 50, 3);
+
+INSERT INTO inventory (invname, invdescription, invimage, invthumbnail, invprice, invstock, categoryid) VALUES
+('Summer Blend', 'An Organic Herbal blend of Yellow & Orange Calendula flowers, Cinnamon, Blue Cornflowers, Dried Cherries & Coconut pieces, in a base of Rosehips. Perfect for a relaxing afternoon or evening cuppa.',
+'/project/images/products/summer-blend-loose-leaf-tea.jpg', '/project/images/products/summer-blend-loose-leaf-tea-tn.jpg', 4.00, 50, 1);
+
+INSERT INTO inventory (invname, invdescription, invimage, invthumbnail, invprice, invstock, categoryid) VALUES
+('Winter Blend', 'An Organic Herbal blend of Heather, Hibiscus and Blue Mallow Flowers, Coconut pieces, Peppermint & Cinnamon. Perfect for a relaxing afternoon or evening cuppa. A wonderful Tisane for those cold, damp Winter days.',
+'/project/images/products/winter-blend-loose-leaf-tea.jpg', '/project/images/products/winter-blend-loose-leaf-tea-tn.jpg', 4.00, 50, 1);
+
+INSERT INTO inventory (invname, invdescription, invimage, invthumbnail, invprice, invstock, categoryid) VALUES
+('Autumn Blend', 'An Organic Herbal blend of Orange & Lemon Peels, Cranberries, Apples, Cinnamon, Cloves, Rosehips and Cinnamon & Orange Essential Oils. A wonderful Tisane for those cool, damp Fall days.',
+'/project/images/products/autumn-blend-loose-leaf-tea.jpeg', '/project/images/products/autumn-blend-loose-leaf-tea-tn.jpeg', 4.00, 50, 1);
+
+INSERT INTO inventory (invname, invdescription, invimage, invthumbnail, invprice, invstock, categoryid) VALUES
+('Spring Blend', 'An Organic blend of vibrant magenta hibiscus, blue and white cornflowers and subtle berry flavors, in a base of pure organic green rooibos, sprinkled with dried blueberries. Brews up to a bright pink cup, with a satisfyingly refreshing sweet-tart flavor that tickles the tastebuds.',
+'/project/images/products/sweet-spring-herbal-tea.jpg', '/project/images/products/sweet-spring-herbal-tea-tn.jpg', 4.00, 50, 1);
+
+INSERT INTO inventory (invname, invdescription, invimage, invthumbnail, invprice, invstock, categoryid) VALUES
+('Green Rooibos', 'A classic rooibos tea fresh from the bush.  Green rooibos is not fermented unlike its red counterpart.  It is a deep, earthy herbal with a similar taste to classic green tea.  Our personal favorite of the rooibos teas.',
+'/project/images/products/green-rooibos-loose-leaf-tea.jpg', '/project/images/products/green-rooibos-loose-leaf-tea-tn.jpg', 3.00, 47, 2);
+
+INSERT INTO inventory (invname, invdescription, invimage, invthumbnail, invprice, invstock, categoryid) VALUES
+('French Vanilla Rooibos', 'This is a sweet and light rooibos herbal tea with a fruity undertone.  Red rooibos is naturally fermented and goes from earthey to sweet. The french vanilla lifts the flavor up to make a fluffy, light and relaxing cup of tea.',
+'/project/images/products/french-vanilla-rooibos-loose-leaf-tea.jpg', '/project/images/products/french-vanilla-rooibos-loose-leaf-tea-tn.jpg', 4.00, 42, 2);
+
+INSERT INTO inventory (invname, invdescription, invimage, invthumbnail, invprice, invstock, categoryid) VALUES
+('Red Rooibos', 'Red rooibos is an African herbal tea with a deep, almost fruity flavor. Harvested and then fermented, our red rooibos is USDA certified organic.',
+'/project/images/products/red-rooibos-loose-leaf-tea.jpg', '/project/images/products/red-rooibos-loose-leaf-tea-tn.jpg', 3.00, 50, 2);
+
+INSERT INTO inventory (invname, invdescription, invimage, invthumbnail, invprice, invstock, categoryid) VALUES
+('Berry Blues', 'Our Berry Blues Herbal is a delicious blend of natural fruits that brews up a mouthwatering cup of herbal Tea. The flavor is all natural, emanating from apple pieces, hibiscus flowers, cranberries and blueberries. Naturally sweet and caffeine-free.',
+'/project/images/products/cherry-loose-leaf-tea.jpg', '/project/images/products/cherry-loose-leaf-tea-tn.jpg', 4.00, 23, 3);
+
+INSERT INTO inventory (invname, invdescription, invimage, invthumbnail, invprice, invstock, categoryid) VALUES
+('Cherry Blend', 'Our Cherry blend is a delicious mixture of natural fruits that brews up a mouthwatering cup of herbal Tea. The flavor is all natural, coming from sour cherries, apples, orange peels, rose hips, and hibiscus flowers.',
+'/project/images/products/cherry-loose-leaf-tea.jpg', '/project/images/products/cherry-loose-leaf-tea-tn.jpg', 4.00, 32, 3);
+
+INSERT INTO inventory (invname, invdescription, invimage, invthumbnail, invprice, invstock, categoryid) VALUES
+('Pina Colada Blend', 'Our Pina Colada Herbal is a mix of ripe pineapple, savory coconut, fresh apples, rosehips and hibiscus flowers. A tropical delight.',
+'/project/images/products/pina-colada-loose-leaf-tea.jpg', '/project/images/products/pina-colada-loose-leaf-tea-tn.jpg', 4.00, 44, 3);
+
+ALTER TABLE inventory 
+ADD CONSTRAINT constraint_fk 
+FOREIGN KEY (categoryId) 
+REFERENCES categories(categoryId);
